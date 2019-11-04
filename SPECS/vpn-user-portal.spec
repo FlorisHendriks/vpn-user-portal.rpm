@@ -1,7 +1,7 @@
-#global git 5693a5a6e69b665bf8db900e3198e54c40862e92
+#global git 57d3e3ea7757822f3fb1bfdaf2e7e1d650789dc2
 
 Name:       vpn-user-portal
-Version:    2.0.14
+Version:    2.1.0
 Release:    1%{?dist}
 Summary:    VPN User Portal
 Group:      Applications/Internet
@@ -261,10 +261,13 @@ fi
 %{_datadir}/vpn-user-portal/config
 %{_datadir}/vpn-user-portal/locale
 %dir %attr(0700,apache,apache) %{_localstatedir}/lib/vpn-user-portal
-%doc README.md CHANGES.md composer.json config/config.php.example CONFIG_CHANGES.md
+%doc README.md CHANGES.md composer.json config/config.php.example CONFIG_CHANGES.md locale/CREDITS.md
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Nov 04 2019 François Kooman <fkooman@tuxed.net> - 2.1.0-1
+- update to 2.1.0
+
 * Mon Oct 14 2019 François Kooman <fkooman@tuxed.net> - 2.0.14-1
 - update to 2.0.14
 
