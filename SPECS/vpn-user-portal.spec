@@ -1,7 +1,7 @@
-#global git 0fa2683403db130df598d0107fda9ec9780b5f5d
+#global git b78f3164a2e7a2eef4cb1e4c675402bfb0bc24f2
 
 Name:       vpn-user-portal
-Version:    2.1.3
+Version:    2.1.4
 Release:    1%{?dist}
 Summary:    VPN User Portal
 Group:      Applications/Internet
@@ -178,6 +178,7 @@ AUTOLOAD
 
 %install
 mkdir -p %{buildroot}%{_datadir}/vpn-user-portal
+cp VERSION %{buildroot}%{_datadir}/vpn-user-portal
 mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
 cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
 
@@ -253,18 +254,15 @@ fi
 %{_bindir}/*
 %dir %{_datadir}/php/LC
 %{_datadir}/php/LC/Portal
-%dir %{_datadir}/vpn-user-portal
-%{_datadir}/vpn-user-portal/data
-%{_datadir}/vpn-user-portal/web
-%{_datadir}/vpn-user-portal/schema
-%{_datadir}/vpn-user-portal/views
-%{_datadir}/vpn-user-portal/config
-%{_datadir}/vpn-user-portal/locale
+%{_datadir}/vpn-user-portal
 %dir %attr(0700,apache,apache) %{_localstatedir}/lib/vpn-user-portal
 %doc README.md CHANGES.md composer.json config/config.php.example CONFIG_CHANGES.md locale/CREDITS.md
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Dec 10 2019 François Kooman <fkooman@tuxed.net> - 2.1.4-1
+- update to 2.1.4
+
 * Mon Dec 02 2019 François Kooman <fkooman@tuxed.net> - 2.1.3-1
 - update to 2.1.3
 
