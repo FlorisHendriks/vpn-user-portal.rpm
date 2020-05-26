@@ -1,7 +1,7 @@
-#global git a00af3ee35a09fea1868f24e79c925f1a170028f
+#global git 5b01b89181c50916d1e8f72dc675b641e3d91418
 
 Name:       vpn-user-portal
-Version:    2.2.7
+Version:    2.2.8
 Release:    1%{?dist}
 Summary:    VPN User Portal
 Group:      Applications/Internet
@@ -72,8 +72,8 @@ BuildRequires:  php-pdo
 BuildRequires:  php-spl
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
-BuildRequires:  php-composer(fkooman/saml-sp) >= 0.3
-BuildRequires:  php-composer(fkooman/saml-sp) < 0.4
+BuildRequires:  php-composer(fkooman/saml-sp) >= 0.4
+BuildRequires:  php-composer(fkooman/saml-sp) < 0.5
 BuildRequires:  php-composer(fkooman/secookie) >= 4
 BuildRequires:  php-composer(fkooman/secookie) < 5
 BuildRequires:  php-composer(fkooman/sqlite-migrate)
@@ -128,8 +128,8 @@ Requires:   php-pdo
 Requires:   php-spl
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
-Requires:   php-composer(fkooman/saml-sp) >= 0.3
-Requires:   php-composer(fkooman/saml-sp) < 0.4
+Requires:   php-composer(fkooman/saml-sp) >= 0.4
+Requires:   php-composer(fkooman/saml-sp) < 0.5
 Requires:   php-composer(fkooman/secookie) >= 4
 Requires:   php-composer(fkooman/secookie) < 5
 Requires:   php-composer(fkooman/sqlite-migrate)
@@ -269,6 +269,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue May 26 2020 François Kooman <fkooman@tuxed.net> - 2.2.8-1
+- update to 2.2.8
+
 * Thu May 21 2020 François Kooman <fkooman@tuxed.net> - 2.2.7-1
 - update to 2.2.7
 
