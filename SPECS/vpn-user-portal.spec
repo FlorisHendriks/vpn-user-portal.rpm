@@ -1,7 +1,7 @@
-#global git f0617f24768006bb9be32bcea1045c134ec56ce2
+#global git 3a850e1df3b81811623ffcce7823359915661fba
 
 Name:       vpn-user-portal
-Version:    2.3.1
+Version:    2.3.2
 Release:    1%{?dist}
 Summary:    VPN User Portal
 Group:      Applications/Internet
@@ -43,12 +43,12 @@ BuildRequires:  phpunit
 %endif
 
 #    "require": {
-#        "bacon/bacon-qr-code": "^1.0",
 #        "ext-curl": "*",
 #        "ext-date": "*",
 #        "ext-hash": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
+#        "ext-sqlite3": "*",
 #        "ext-spl": "*",
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
@@ -62,7 +62,6 @@ BuildRequires:  phpunit
 #        "psr/log": "^1.1"
 #    },
 BuildRequires:  php(language) >= 5.4.0
-BuildRequires:  php-composer(bacon/bacon-qr-code) < 2.0.0
 BuildRequires:  php-curl
 BuildRequires:  php-date
 BuildRequires:  php-hash
@@ -93,14 +92,15 @@ Requires:   httpd-filesystem
 # EL7 does not have httpd-filesystem
 Requires:   httpd
 %endif
+Requires:   /usr/bin/qrencode
 Requires:   crontabs
 #    "require": {
-#        "bacon/bacon-qr-code": "^1.0",
 #        "ext-curl": "*",
 #        "ext-date": "*",
 #        "ext-hash": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
+#        "ext-sqlite3": "*",
 #        "ext-spl": "*",
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
@@ -115,7 +115,6 @@ Requires:   crontabs
 #    },
 Requires:   php(language) >= 5.4.0
 Requires:   php-cli
-Requires:   php-composer(bacon/bacon-qr-code) < 2.0.0
 Requires:   php-curl
 Requires:   php-date
 Requires:   php-hash
@@ -162,7 +161,6 @@ VPN User Portal.
 %build
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/BaconQrCode/autoload.php';
 require_once '%{_datadir}/php/LC/Common/autoload.php';
 require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
@@ -266,6 +264,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Jul 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.2-1
+- update to 2.3.2
+
 * Fri Jul 10 2020 François Kooman <fkooman@tuxed.net> - 2.3.1-1
 - update to 2.3.1
 
