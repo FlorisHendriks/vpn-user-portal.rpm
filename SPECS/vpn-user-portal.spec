@@ -1,17 +1,17 @@
-#global git 3a850e1df3b81811623ffcce7823359915661fba
+#global git a1f9ec2b472def12c6c7ea1dbb00c50b8b6829d7
 
 Name:       vpn-user-portal
-Version:    2.3.2
-Release:    1%{?dist}
+Version:    2.3.3
+Release:    2%{?dist}
 Summary:    VPN User Portal
 Group:      Applications/Internet
 License:    AGPLv3+
-URL:        https://github.com/eduvpn/vpn-user-portal
+URL:        https://src.tuxed.net/vpn-user-portal
 %if %{defined git}
-Source0:    https://github.com/eduvpn/vpn-user-portal/archive/%{git}/vpn-user-portal-%{version}-%{git}.tar.gz
+Source0:    https://git.tuxed.net/LC/vpn-user-portal/snapshot/vpn-user-portal-%{git}.tar.gz
 %else
-Source0:    https://github.com/eduvpn/vpn-user-portal/releases/download/%{version}/vpn-user-portal-%{version}.tar.xz
-Source1:    https://github.com/eduvpn/vpn-user-portal/releases/download/%{version}/vpn-user-portal-%{version}.tar.xz.minisig
+Source0:    https://src.tuxed.net/vpn-user-portal/vpn-user-portal-%{version}.tar.xz
+Source1:    https://src.tuxed.net/vpn-user-portal/vpn-user-portal-%{version}.tar.xz.minisig
 Source2:    minisign-8466FFE127BCDC82.pub
 %endif
 Source3:    vpn-user-portal-httpd.conf
@@ -52,7 +52,7 @@ BuildRequires:  phpunit
 #        "ext-spl": "*",
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
-#        "fkooman/secookie": "^4",
+#        "fkooman/secookie": "^5",
 #        "fkooman/sqlite-migrate": "^0",
 #        "lc/common": "v2.x-dev",
 #        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
@@ -70,8 +70,8 @@ BuildRequires:  php-pdo
 BuildRequires:  php-spl
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
-BuildRequires:  php-composer(fkooman/secookie) >= 4
-BuildRequires:  php-composer(fkooman/secookie) < 5
+BuildRequires:  php-composer(fkooman/secookie) >= 5
+BuildRequires:  php-composer(fkooman/secookie) < 6
 BuildRequires:  php-composer(fkooman/sqlite-migrate)
 BuildRequires:  php-composer(lc/common)
 BuildRequires:  php-composer(paragonie/constant_time_encoding)
@@ -104,7 +104,7 @@ Requires:   crontabs
 #        "ext-spl": "*",
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
-#        "fkooman/secookie": "^4",
+#        "fkooman/secookie": "^5",
 #        "fkooman/sqlite-migrate": "^0",
 #        "lc/common": "v2.x-dev",
 #        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
@@ -123,8 +123,8 @@ Requires:   php-pdo
 Requires:   php-spl
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
-Requires:   php-composer(fkooman/secookie) >= 4
-Requires:   php-composer(fkooman/secookie) < 5
+Requires:   php-composer(fkooman/secookie) >= 5
+Requires:   php-composer(fkooman/secookie) < 6
 Requires:   php-composer(fkooman/sqlite-migrate)
 Requires:   php-composer(lc/common)
 Requires:   php-composer(paragonie/constant_time_encoding)
@@ -264,6 +264,12 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Aug 04 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-2
+- release files moved to src.tuxed.net
+
+* Tue Jul 28 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-1
+- update to 2.3.3
+
 * Mon Jul 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.2-1
 - update to 2.3.2
 
