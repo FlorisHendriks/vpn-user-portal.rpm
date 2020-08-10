@@ -2,11 +2,11 @@
 
 Name:       vpn-user-portal
 Version:    2.3.3
-Release:    2%{?dist}
-Summary:    VPN User Portal
+Release:    3%{?dist}
+Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
-URL:        https://src.tuxed.net/vpn-user-portal
+URL:        https://git.tuxed.net/LC/vpn-user-portal/about/
 %if %{defined git}
 Source0:    https://git.tuxed.net/LC/vpn-user-portal/snapshot/vpn-user-portal-%{git}.tar.gz
 %else
@@ -144,7 +144,9 @@ Requires(post): /usr/bin/openssl
 Requires(postun): /usr/sbin/semanage
 
 %description
-VPN User Portal.
+The user and admin portal and API for Let's Connect! and eduVPN allowing 
+for self-management by users and administrative tasks by designated 
+administrators.
 
 %prep
 %if %{defined git}
@@ -264,6 +266,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Aug 10 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-3
+- update URL/summary/description
+
 * Tue Aug 04 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-2
 - release files moved to src.tuxed.net
 
