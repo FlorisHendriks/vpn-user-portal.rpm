@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    2.3.3
-Release:    3%{?dist}
+Release:    4%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -161,6 +161,8 @@ administrators.
 %endif
 
 %build
+echo "%{version}-%{release}" > VERSION
+
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
 require_once '%{_datadir}/php/LC/Common/autoload.php';
@@ -266,6 +268,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Aug 11 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-4
+- put version/release in VERSION file
+
 * Mon Aug 10 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-3
 - update URL/summary/description
 
