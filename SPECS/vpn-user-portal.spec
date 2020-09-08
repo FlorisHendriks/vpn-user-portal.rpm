@@ -1,8 +1,8 @@
-#global git a1f9ec2b472def12c6c7ea1dbb00c50b8b6829d7
+#global git 488456444327b33642436748bd4e0c6535ffceda
 
 Name:       vpn-user-portal
-Version:    2.3.3
-Release:    4%{?dist}
+Version:    2.3.4
+Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -18,11 +18,8 @@ Source3:    vpn-user-portal-httpd.conf
 Source4:    vpn-user-portal.cron
 Patch0:     vpn-user-portal-autoload.patch
 
-# we do not wish to depend on paragonie/sodium_compat as we'll always require
-# php-pecl(libsodium) on CentOS 7, instead we have a small mapping wrapper that
-# converts calls to the Sodium namespaced php-pecl(libsodium) 1.x 
-# constants/functions
-Patch1:     vpn-user-portal-sodium.patch
+# patch to convert php-sodium to php-libsodium functions/constants on el7
+Patch1:     vpn-user-portal-sodium-compat.patch
 
 BuildArch:  noarch
 
@@ -179,7 +176,6 @@ if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_d
 AUTOLOAD
 %if 0%{?fedora} < 28 && 0%{?rhel} < 8
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once sprintf('%s/sodium_compat.php', __DIR__);
 require_once '%{_datadir}/php/random_compat/autoload.php';
 AUTOLOAD
 %endif
@@ -268,6 +264,12 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Sep 08 2020 François Kooman <fkooman@tuxed.net> - 2.3.4-1
+- update to 2.3.4
+
+* Thu Aug 20 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-5
+- convert php-sodium to php-libsodium functions/constants on el7
+
 * Tue Aug 11 2020 François Kooman <fkooman@tuxed.net> - 2.3.3-4
 - put version/release in VERSION file
 

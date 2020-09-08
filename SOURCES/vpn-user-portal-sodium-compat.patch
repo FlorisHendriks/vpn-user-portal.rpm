@@ -1,0 +1,26 @@
+diff --git a/src/ForeignKeyListFetcher.php b/src/ForeignKeyListFetcher.php
+index 07d91b1..a39ade1 100644
+--- a/src/ForeignKeyListFetcher.php
++++ b/src/ForeignKeyListFetcher.php
+@@ -50,7 +50,7 @@ class ForeignKeyListFetcher
+             $discoverySignatureBody = Base64::decode($discoverySignatureResponse->getBody());
+ 
+             $publicKey = Base64::decode($encodedPublicKey);
+-            if (!sodium_crypto_sign_verify_detached($discoverySignatureBody, $discoveryBody, $publicKey)) {
++            if (!\Sodium\crypto_sign_verify_detached($discoverySignatureBody, $discoveryBody, $publicKey)) {
+                 throw new RuntimeException('unable to verify signature');
+             }
+ 
+diff --git a/src/Signify.php b/src/Signify.php
+index 9531ef4..b3d1a79 100644
+--- a/src/Signify.php
++++ b/src/Signify.php
+@@ -72,7 +72,7 @@ class Signify
+             throw new Exception('signature does not match public key');
+         }
+ 
+-        return sodium_crypto_sign_verify_detached(
++        return \Sodium\crypto_sign_verify_detached(
+             Binary::safeSubstr($msgSig, Binary::safeStrlen(self::SIGNIFY_ALGO_DESCRIPTION) + self::SIGNIFY_RANDOM_BYTES_LENGTH),
+             $messageText,
+             $this->publicKey
