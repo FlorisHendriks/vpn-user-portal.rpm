@@ -264,7 +264,7 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
-* Thu Oct 29 10:29:59 CET 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.2
+* Thu Oct 29 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.2
 - rebuilt
 
 * Wed Oct 28 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.1
