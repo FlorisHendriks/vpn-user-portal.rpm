@@ -1,8 +1,8 @@
-%global git 431af7806b4a9e4ef7f2b6c464b55ee339e792d6
+#global git facb699676ab8bb9a188607a04b3db17bfb637a9
 
 Name:       vpn-user-portal
 Version:    2.3.6
-Release:    0.11%{?dist}
+Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -264,37 +264,7 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
-* Fri Nov 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.11
-- rebuilt
-
-* Fri Nov 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.10
-- rebuilt
-
-* Sat Nov  7 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.9
-- rebuilt
-
-* Sat Nov  7 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.8
-- rebuilt
-
-* Sat Oct 31 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.7
-- rebuilt
-
-* Sat Oct 31 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.6
-- rebuilt
-
-* Thu Oct 29 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.5
-- rebuilt
-
-* Thu Oct 29 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.4
-- rebuilt
-
-* Thu Oct 29 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.3
-- rebuilt
-
-* Thu Oct 29 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.2
-- rebuilt
-
-* Wed Oct 28 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-0.1
+* Fri Nov 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-1
 - update to 2.3.6
 
 * Tue Oct 20 2020 François Kooman <fkooman@tuxed.net> - 2.3.5-1
