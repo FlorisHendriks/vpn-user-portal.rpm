@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    2.3.7
-Release:    0.36%{?dist}
+Release:    0.38%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -186,7 +186,7 @@ cp VERSION %{buildroot}%{_datadir}/vpn-user-portal
 mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
 cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
 
-for i in add-user foreign-key-list-fetcher init generate-oauth-key show-oauth-key
+for i in add-user foreign-key-list-fetcher init generate-oauth-key show-oauth-key wg-sync-peers
 do
     install -m 0755 -D -p bin/${i}.php %{buildroot}%{_bindir}/vpn-user-portal-${i}
     sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_bindir}/vpn-user-portal-${i}
@@ -264,6 +264,12 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.38
+- rebuilt
+
+* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.37
+- rebuilt
+
 * Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.36
 - rebuilt
 
