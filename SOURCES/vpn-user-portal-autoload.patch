@@ -73,21 +73,6 @@ index 9e92551..0d7d8c3 100644
  
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\FileIO;
-diff --git a/bin/wg-sync-peers.php b/bin/wg-sync-peers.php
-index bfaeceb..0eac934 100644
---- a/bin/wg-sync-peers.php
-+++ b/bin/wg-sync-peers.php
-@@ -7,8 +7,8 @@
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use LC\Common\Config;
- use LC\Common\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
 index 6dc4031..ecdb67c 100644
 --- a/web/api.php
