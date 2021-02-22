@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    2.3.7
-Release:    0.43%{?dist}
+Release:    0.44%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -10,8 +10,8 @@ URL:        https://git.sr.ht/~fkooman/vpn-user-portal
 %if %{defined git}
 Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/archive/%{git}.tar.gz
 %else
-Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/%{version}/vpn-user-portal-%{version}.tar.xz
-Source1:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/%{version}/vpn-user-portal-%{version}.tar.xz.minisig
+Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/%{version}/vpn-user-portal-%{version}.tar.xz
+Source1:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/%{version}/vpn-user-portal-%{version}.tar.xz.minisig
 Source2:    minisign-8466FFE127BCDC82.pub
 %endif
 Source3:    vpn-user-portal-httpd.conf
@@ -264,6 +264,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Feb 22 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.44
+- update source download URL
+
 * Sat Feb 13 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.43
 - rebuilt
 
