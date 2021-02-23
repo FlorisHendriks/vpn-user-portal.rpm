@@ -1,8 +1,8 @@
-%global git d4e8acf50cc6ab0c41be60c217a8be4b9ec6269a
+#global git 15a1d7aba5d4c750673e138b2bff0ea3b2d18b92
 
 Name:       vpn-user-portal
 Version:    2.3.7
-Release:    0.45%{?dist}
+Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -264,139 +264,7 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
-* Tue Feb 23 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.45
-- rebuilt
-
-* Mon Feb 22 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.44
-- update source download URL
-
-* Sat Feb 13 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.43
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.42
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.41
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.40
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.39
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.38
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.37
-- rebuilt
-
-* Fri Feb 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.36
-- rebuilt
-
-* Thu Feb 11 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.35
-- rebuilt
-
-* Thu Feb 11 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.34
-- rebuilt
-
-* Thu Feb 11 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.33
-- rebuilt
-
-* Wed Feb 10 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.32
-- rebuilt
-
-* Wed Feb 10 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.31
-- rebuilt
-
-* Sat Feb 06 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.30
-- rebuilt
-
-* Thu Feb 04 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.29
-- source moved to sr.ht
-
-* Wed Feb 03 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.28
-- rebuilt
-
-* Tue Feb 02 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.27
-- rebuilt
-
-* Tue Feb 02 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.26
-- rebuilt
-
-* Mon Feb 01 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.25
-- rebuilt
-
-* Fri Jan 29 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.24
-- rebuilt
-
-* Fri Jan 29 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.23
-- rebuilt
-
-* Fri Jan 29 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.22
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.21
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.20
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.19
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.18
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.17
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.16
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.15
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.14
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.13
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.12
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.11
-- rebuilt
-
-* Thu Jan 28 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.10
-- rebuilt
-
-* Tue Jan 26 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.9
-- rebuilt
-
-* Tue Jan 26 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.8
-- rebuilt
-
-* Tue Jan 26 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.7
-- rebuilt
-
-* Mon Jan 25 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.6
-- rebuilt
-
-* Mon Jan 25 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.5
-- rebuilt
-
-* Fri Jan 22 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.4
-- rebuilt
-
-* Thu Jan 21 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-0.3
-- rebuilt
-
-* Thu Dec 10 2020 François Kooman <fkooman@tuxed.net> - 2.3.7-0.2
-- rebuilt
-
-* Thu Dec 10 2020 François Kooman <fkooman@tuxed.net> - 2.3.7-0.1
+* Tue Feb 23 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-1
 - update to 2.3.7
 
 * Fri Nov 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-1
