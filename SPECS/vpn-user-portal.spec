@@ -1,17 +1,17 @@
-#global git facb699676ab8bb9a188607a04b3db17bfb637a9
+#global git 15a1d7aba5d4c750673e138b2bff0ea3b2d18b92
 
 Name:       vpn-user-portal
-Version:    2.3.6
+Version:    2.3.7
 Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
-URL:        https://git.tuxed.net/LC/vpn-user-portal/about/
+URL:        https://git.sr.ht/~fkooman/vpn-user-portal
 %if %{defined git}
-Source0:    https://git.tuxed.net/LC/vpn-user-portal/snapshot/vpn-user-portal-%{git}.tar.gz
+Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/archive/%{git}.tar.gz
 %else
-Source0:    https://src.tuxed.net/vpn-user-portal/vpn-user-portal-%{version}.tar.xz
-Source1:    https://src.tuxed.net/vpn-user-portal/vpn-user-portal-%{version}.tar.xz.minisig
+Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/%{version}/vpn-user-portal-%{version}.tar.xz
+Source1:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/%{version}/vpn-user-portal-%{version}.tar.xz.minisig
 Source2:    minisign-8466FFE127BCDC82.pub
 %endif
 Source3:    vpn-user-portal-httpd.conf
@@ -264,6 +264,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Feb 23 2021 François Kooman <fkooman@tuxed.net> - 2.3.7-1
+- update to 2.3.7
+
 * Fri Nov 27 2020 François Kooman <fkooman@tuxed.net> - 2.3.6-1
 - update to 2.3.6
 
