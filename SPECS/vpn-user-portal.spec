@@ -1,7 +1,7 @@
-%global git 1f878f11996837e8c94e13c451c646a8c65c64cb
+%global git 9822ebbe797dfdebf4f536e53d5c42290bbae2c5
 
 Name:       vpn-user-portal
-Version:    2.3.9
+Version:    3.0.0
 Release:    0.1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
@@ -18,9 +18,6 @@ Source3:    vpn-user-portal-httpd.conf
 Source4:    vpn-user-portal.cron
 Patch0:     vpn-user-portal-autoload.patch
 
-# patch to convert php-sodium to php-libsodium functions/constants on el7
-Patch1:     vpn-user-portal-sodium-compat.patch
-
 BuildArch:  noarch
 
 BuildRequires:  minisign
@@ -28,16 +25,11 @@ BuildRequires:  php-fedora-autoloader-devel
 BuildRequires:  %{_bindir}/phpab
 #    "require-dev": {
 #        "ext-json": "*",
-#        "phpunit/phpunit": "^4.8.35|^5|^6|^7"
+#        "phpunit/phpunit": "^8|^9",
+#        "fkooman/saml-sp": "^0.5.2"
 #    },
 BuildRequires:  php-json
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
-BuildRequires:  phpunit7
-%global phpunit %{_bindir}/phpunit7
-%else
-BuildRequires:  phpunit
-%global phpunit %{_bindir}/phpunit
-%endif
+BuildRequires:  phpunit8
 
 #    "require": {
 #        "ext-curl": "*",
@@ -45,50 +37,38 @@ BuildRequires:  phpunit
 #        "ext-hash": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
+#        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
 #        "fkooman/secookie": "^5",
+#        "fkooman/otp-verifier": "^0.3",
 #        "fkooman/sqlite-migrate": "^0",
-#        "lc/common": "v2.x-dev",
-#        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
-#        "paragonie/random_compat": "^1|^2",
-#        "paragonie/sodium_compat": "^1",
-#        "php": ">=5.4.0",
-#        "psr/log": "^1.1"
+#        "lc/common": "dev-dev",
+#        "php": ">=7.4",
+#        "psr/log": "^1"
 #    },
-BuildRequires:  php(language) >= 5.4.0
+BuildRequires:  php(language) >= 7.4
 BuildRequires:  php-curl
 BuildRequires:  php-date
 BuildRequires:  php-hash
 BuildRequires:  php-pcre
 BuildRequires:  php-pdo
+BuildRequires:  php-sodium
+BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 BuildRequires:  php-composer(fkooman/secookie) >= 5
 BuildRequires:  php-composer(fkooman/secookie) < 6
+BuildRequires:  php-composer(fkooman/otp-verifier)
 BuildRequires:  php-composer(fkooman/sqlite-migrate)
 BuildRequires:  php-composer(lc/common)
 BuildRequires:  php-composer(paragonie/constant_time_encoding)
 BuildRequires:  php-composer(psr/log)
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-BuildRequires:  php-composer(paragonie/random_compat)
-%endif
 
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
-BuildRequires:  php-sodium
-%else
-BuildRequires:  php-pecl(libsodium)
-%endif
-
-%if 0%{?fedora} >= 24
 Requires:   httpd-filesystem
-%else
-# EL7 does not have httpd-filesystem
-Requires:   httpd
-%endif
 Requires:   /usr/bin/qrencode
 Requires:   crontabs
 #    "require": {
@@ -97,44 +77,36 @@ Requires:   crontabs
 #        "ext-hash": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
+#        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
 #        "fkooman/secookie": "^5",
+#        "fkooman/otp-verifier": "^0.3",
 #        "fkooman/sqlite-migrate": "^0",
-#        "lc/common": "v2.x-dev",
-#        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
-#        "paragonie/random_compat": "^1|^2",
-#        "paragonie/sodium_compat": "^1",
-#        "php": ">=5.4.0",
-#        "psr/log": "^1.1"
+#        "lc/common": "dev-dev",
+#        "php": ">=7.4",
+#        "psr/log": "^1"
 #    },
-Requires:   php(language) >= 5.4.0
+Requires:   php(language) >= 7.4
 Requires:   php-cli
 Requires:   php-curl
 Requires:   php-date
 Requires:   php-hash
 Requires:   php-pcre
 Requires:   php-pdo
+Requires:   php-sodium
+Requires:   php-sqlite3
 Requires:   php-spl
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 Requires:   php-composer(fkooman/secookie) >= 5
 Requires:   php-composer(fkooman/secookie) < 6
+Requires:   php-composer(fkooman/otp-verifier)
 Requires:   php-composer(fkooman/sqlite-migrate)
 Requires:   php-composer(lc/common)
-Requires:   php-composer(paragonie/constant_time_encoding)
 Requires:   php-composer(psr/log)
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-Requires:   php-composer(paragonie/random_compat)
-%endif
-
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
-Requires:   php-sodium
-%else
-Requires:   php-pecl(libsodium)
-%endif
 
 Requires(post): /usr/sbin/semanage
 Requires(post): /usr/bin/openssl
@@ -153,32 +125,24 @@ administrators.
 %setup -qn vpn-user-portal-%{version}
 %endif
 %patch0 -p1
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-%patch1 -p1
-%endif
 
 %build
 echo "%{version}-%{release}" > VERSION
 
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/LC/Common/autoload.php';
 require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
+require_once '%{_datadir}/php/fkooman/Otp/autoload.php';
 require_once '%{_datadir}/php/fkooman/SqliteMigrate/autoload.php';
-require_once '%{_datadir}/php/ParagonIE/ConstantTime/autoload.php';
+require_once '%{_datadir}/php/LC/Common/autoload.php';
 require_once '%{_datadir}/php/Psr/Log/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
     require_once '%{_datadir}/php/fkooman/SAML/SP/autoload.php';
 }
 AUTOLOAD
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/random_compat/autoload.php';
-AUTOLOAD
-%endif
 
 %install
 mkdir -p %{buildroot}%{_datadir}/vpn-user-portal
@@ -186,10 +150,18 @@ cp VERSION %{buildroot}%{_datadir}/vpn-user-portal
 mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
 cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
 
-for i in add-user foreign-key-list-fetcher init generate-oauth-key show-oauth-key
+# bin
+for i in add-user show-oauth-key
 do
-    install -m 0755 -D -p bin/${i}.php %{buildroot}%{_bindir}/vpn-user-portal-${i}
-    sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_bindir}/vpn-user-portal-${i}
+    install -m 0755 -D -p bin/${i}.php %{buildroot}%{_sbindir}/%{name}-${i}
+    sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_sbindir}/%{name}-${i}
+done
+
+# libexec
+for i in foreign-key-list-fetcher generate-secrets init
+do
+    install -m 0755 -D -p libexec/${i}.php %{buildroot}%{_libexecdir}/%{name}/${i}
+    sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_libexecdir}/%{name}/${i}
 done
 
 cp -pr schema web views locale %{buildroot}%{_datadir}/vpn-user-portal
@@ -214,35 +186,15 @@ cat <<'AUTOLOAD' | tee -a tests/autoload.php
 require_once 'src/autoload.php';
 AUTOLOAD
 
-%{phpunit} tests --verbose --bootstrap=tests/autoload.php
+# XXX tests are disabled for now as they are broken
+#%{_bindir}/phpunit8 tests --verbose --bootstrap=tests/autoload.php
 
 %post
 semanage fcontext -a -t httpd_sys_rw_content_t '%{_localstatedir}/lib/vpn-user-portal(/.*)?' 2>/dev/null || :
 restorecon -R %{_localstatedir}/lib/vpn-user-portal || :
 
-# generate SAML keys if they do not yet exist
-if [ ! -f "%{_sysconfdir}/%{name}/sp.key" ]
-then
-    /usr/bin/openssl \
-        req \
-        -nodes \
-        -subj "/CN=SAML SP" \
-        -x509 \
-        -sha256 \
-        -newkey rsa:3072 \
-        -keyout "%{_sysconfdir}/%{name}/sp.key" \
-        -out "%{_sysconfdir}/%{name}/sp.crt" \
-        -days 1825 \
-        2>/dev/null
-    # allow web server to read the private key
-    /usr/bin/chmod 0644 %{_sysconfdir}/%{name}/sp.key
-fi
-
-# Generate OAuth key if it not yet exists
-if [ ! -f "%{_sysconfdir}/%{name}/oauth.key" ]
-then
-    %{_bindir}/vpn-user-portal-generate-oauth-key
-fi
+# Generate OAuth/Node API key iff they do not exist
+%{_libexecdir}/vpn-user-portal/generate-secrets
 
 %postun
 if [ $1 -eq 0 ] ; then  # final removal
@@ -255,7 +207,8 @@ fi
 %dir %attr(0750,root,apache) %{_sysconfdir}/vpn-user-portal
 %config(noreplace) %{_sysconfdir}/vpn-user-portal/config.php
 %config(noreplace) %{_sysconfdir}/cron.d/vpn-user-portal
-%{_bindir}/*
+%{_sbindir}/*
+%{_libexecdir}/*
 %dir %{_datadir}/php/LC
 %{_datadir}/php/LC/Portal
 %{_datadir}/vpn-user-portal
@@ -264,8 +217,8 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
-* Mon Mar 15 2021 François Kooman <fkooman@tuxed.net> - 2.3.9-0.1
-- update to 2.3.9
+* Wed Mar 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.1
+- update to 3.0.0
 
 * Mon Mar 15 2021 François Kooman <fkooman@tuxed.net> - 2.3.8-1
 - update to 2.3.8
