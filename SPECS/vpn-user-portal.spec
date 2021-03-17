@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.2%{?dist}
+Release:    0.3%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -69,6 +69,7 @@ BuildRequires:  php-composer(paragonie/constant_time_encoding)
 BuildRequires:  php-composer(psr/log)
 
 Requires:   httpd-filesystem
+Requires:   vpn-ca
 Requires:   /usr/bin/qrencode
 Requires:   crontabs
 #    "require": {
@@ -217,6 +218,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Wed Mar 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.3
+- rebuilt
+
 * Wed Mar 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.2
 - rebuilt
 
