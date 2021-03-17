@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.4%{?dist}
+Release:    0.5%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -25,11 +25,11 @@ BuildRequires:  php-fedora-autoloader-devel
 BuildRequires:  %{_bindir}/phpab
 #    "require-dev": {
 #        "ext-json": "*",
-#        "phpunit/phpunit": "^8|^9",
+#        "phpunit/phpunit": "^9",
 #        "fkooman/saml-sp": "^0.5.2"
 #    },
 BuildRequires:  php-json
-BuildRequires:  phpunit8
+BuildRequires:  phpunit9
 
 #    "require": {
 #        "ext-curl": "*",
@@ -45,7 +45,7 @@ BuildRequires:  phpunit8
 #        "fkooman/secookie": "^5",
 #        "fkooman/otp-verifier": "^0.3",
 #        "fkooman/sqlite-migrate": "^0",
-#        "lc/common": "dev-dev",
+#        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
 #    },
@@ -86,7 +86,7 @@ Requires:   crontabs
 #        "fkooman/secookie": "^5",
 #        "fkooman/otp-verifier": "^0.3",
 #        "fkooman/sqlite-migrate": "^0",
-#        "lc/common": "dev-dev",
+#        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
 #    },
@@ -188,7 +188,7 @@ require_once 'src/autoload.php';
 AUTOLOAD
 
 # XXX tests are disabled for now as they are broken
-#%{_bindir}/phpunit8 tests --verbose --bootstrap=tests/autoload.php
+#%{_bindir}/phpunit9 tests --verbose --bootstrap=tests/autoload.php
 
 %post
 semanage fcontext -a -t httpd_sys_rw_content_t '%{_localstatedir}/lib/vpn-user-portal(/.*)?' 2>/dev/null || :
@@ -218,6 +218,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Wed Mar 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.5
+- rebuilt
+
 * Wed Mar 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.4
 - rebuilt
 
