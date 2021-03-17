@@ -73,3 +73,78 @@ index 3e6d6d9..3463c19 100644
  
  use LC\Common\FileIO;
  use LC\Portal\Storage;
+diff --git a/web/api.php b/web/api.php
+index 22cb175..291dbf7 100644
+--- a/web/api.php
++++ b/web/api.php
+@@ -7,8 +7,8 @@
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use fkooman\Jwt\Keys\EdDSA\SecretKey;
+ use LC\Common\Config;
+diff --git a/web/index.php b/web/index.php
+index 8e22a49..c08f6a5 100644
+--- a/web/index.php
++++ b/web/index.php
+@@ -7,8 +7,8 @@
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use fkooman\Jwt\Keys\EdDSA\SecretKey;
+ use fkooman\OAuth\Server\OAuthServer;
+diff --git a/web/node-api.php b/web/node-api.php
+index c4374e8..a082b75 100644
+--- a/web/node-api.php
++++ b/web/node-api.php
+@@ -7,8 +7,8 @@
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Common\Config;
+ use LC\Common\FileIO;
+diff --git a/web/oauth.php b/web/oauth.php
+index f6bd927..7f9c11b 100644
+--- a/web/oauth.php
++++ b/web/oauth.php
+@@ -7,8 +7,8 @@
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use fkooman\Jwt\Keys\EdDSA\SecretKey;
+ use fkooman\OAuth\Server\OAuthServer;
+diff --git a/web/well-known.php b/web/well-known.php
+index 411bc9f..05a0210 100644
+--- a/web/well-known.php
++++ b/web/well-known.php
+@@ -7,8 +7,8 @@
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Common\FileIO;
+ use LC\Common\Http\JsonResponse;
