@@ -1,8 +1,8 @@
-%global git 37efb84408a4cf5836f1d2e59f9443b18ee7e308
+%global git 3c4eeb4abe4db044c669e91acd18b105f581df29
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.6%{?dist}
+Release:    0.7%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -188,7 +188,7 @@ require_once 'src/autoload.php';
 AUTOLOAD
 
 # XXX tests are disabled for now as they are broken
-#%{_bindir}/phpunit9 tests --verbose --bootstrap=tests/autoload.php
+#/usr/bin/phpunit9 tests --verbose --bootstrap=tests/autoload.php
 
 %post
 semanage fcontext -a -t httpd_sys_rw_content_t '%{_localstatedir}/lib/vpn-user-portal(/.*)?' 2>/dev/null || :
@@ -218,6 +218,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Mar 18 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.7
+- rebuilt
+
 * Wed Mar 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.6
 - rebuilt
 
