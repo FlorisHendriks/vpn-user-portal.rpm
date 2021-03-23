@@ -1,8 +1,8 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index 2291d72..34bd479 100644
+index ffc0203..60e9bbd 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -14,10 +14,10 @@ index 2291d72..34bd479 100644
  use LC\Common\Config;
  use LC\Portal\Storage;
 diff --git a/bin/show-oauth-key.php b/bin/show-oauth-key.php
-index 3a7f4eb..b29076d 100644
+index d128db2..023a942 100644
 --- a/bin/show-oauth-key.php
 +++ b/bin/show-oauth-key.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -29,10 +29,10 @@ index 3a7f4eb..b29076d 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\FileIO;
 diff --git a/libexec/foreign-key-list-fetcher.php b/libexec/foreign-key-list-fetcher.php
-index acc555f..1aada7e 100644
+index fbb082a..29f9f61 100644
 --- a/libexec/foreign-key-list-fetcher.php
 +++ b/libexec/foreign-key-list-fetcher.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -44,10 +44,10 @@ index acc555f..1aada7e 100644
  use LC\Common\Config;
  use LC\Common\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 26e8651..0d44ada 100644
+index b1adbee..3fcc4c7 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -59,10 +59,10 @@ index 26e8651..0d44ada 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 1d2aa33..38955ef 100644
+index 637fb16..acf392e 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -74,10 +74,10 @@ index 1d2aa33..38955ef 100644
  use LC\Portal\Storage;
  
 diff --git a/libexec/init.php b/libexec/init.php
-index 74f1493..aa981e3 100644
+index fbed8f8..d65fa89 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -89,10 +89,10 @@ index 74f1493..aa981e3 100644
  use LC\Common\FileIO;
  use LC\Portal\Storage;
 diff --git a/libexec/stats.php b/libexec/stats.php
-index a89fe3c..42dce1e 100644
+index db4ab74..df655d8 100644
 --- a/libexec/stats.php
 +++ b/libexec/stats.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -104,10 +104,10 @@ index a89fe3c..42dce1e 100644
  use LC\Common\Config;
  use LC\Common\FileIO;
 diff --git a/web/api.php b/web/api.php
-index 6ca2724..d6b4e31 100644
+index a9895ba..54c9c52 100644
 --- a/web/api.php
 +++ b/web/api.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -119,10 +119,10 @@ index 6ca2724..d6b4e31 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\Config;
 diff --git a/web/index.php b/web/index.php
-index 7bca49f..1931b29 100644
+index 7f4c30f..d2c3152 100644
 --- a/web/index.php
 +++ b/web/index.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -132,12 +132,12 @@ index 7bca49f..1931b29 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
- use fkooman\OAuth\Server\OAuthServer;
+ use fkooman\SeCookie\Cookie;
 diff --git a/web/node-api.php b/web/node-api.php
-index 84e9f75..b0dff73 100644
+index 08931e4..f8f42cd 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -149,10 +149,10 @@ index 84e9f75..b0dff73 100644
  use LC\Common\Config;
  use LC\Common\FileIO;
 diff --git a/web/oauth.php b/web/oauth.php
-index 41d1520..5741ba0 100644
+index d868cab..73d6d67 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
@@ -162,12 +162,12 @@ index 41d1520..5741ba0 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
- use fkooman\OAuth\Server\OAuthServer;
+ use LC\Common\Config;
 diff --git a/web/well-known.php b/web/well-known.php
-index 3e72c49..48de236 100644
+index 279af63..ea31c28 100644
 --- a/web/well-known.php
 +++ b/web/well-known.php
-@@ -7,8 +7,8 @@
+@@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
