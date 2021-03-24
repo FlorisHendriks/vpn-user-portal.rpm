@@ -1,8 +1,8 @@
-%global git 4fb31414ea94995ab9e7985c8c7e986abae5c868
+%global git e41c3f6e62c8bb508c6b6086633e176280b70d8d
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.22%{?dist}
+Release:    0.23%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -43,7 +43,6 @@ BuildRequires:  phpunit9
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
 #        "fkooman/secookie": "^5",
-#        "fkooman/sqlite-migrate": "^0",
 #        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
@@ -61,7 +60,6 @@ BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 BuildRequires:  php-composer(fkooman/secookie) >= 5
 BuildRequires:  php-composer(fkooman/secookie) < 6
-BuildRequires:  php-composer(fkooman/sqlite-migrate)
 BuildRequires:  php-composer(lc/common)
 BuildRequires:  php-composer(paragonie/constant_time_encoding)
 BuildRequires:  php-composer(psr/log)
@@ -85,7 +83,6 @@ Requires:   crontabs
 #        "fkooman/jwt": "^1",
 #        "fkooman/oauth2-server": "^6",
 #        "fkooman/secookie": "^5",
-#        "fkooman/sqlite-migrate": "^0",
 #        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
@@ -104,7 +101,6 @@ Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 Requires:   php-composer(fkooman/secookie) >= 5
 Requires:   php-composer(fkooman/secookie) < 6
-Requires:   php-composer(fkooman/sqlite-migrate)
 Requires:   php-composer(lc/common)
 Requires:   php-composer(psr/log)
 
@@ -134,7 +130,6 @@ cat <<'AUTOLOAD' | tee -a src/autoload.php
 require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
-require_once '%{_datadir}/php/fkooman/SqliteMigrate/autoload.php';
 require_once '%{_datadir}/php/LC/Common/autoload.php';
 require_once '%{_datadir}/php/Psr/Log/autoload.php';
 # optional dependency
@@ -216,6 +211,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Wed Mar 24 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.23
+- rebuilt
+
 * Wed Mar 24 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.22
 - rebuilt
 
