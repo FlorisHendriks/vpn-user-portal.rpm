@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.25%{?dist}
+Release:    0.26%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -47,6 +47,10 @@ BuildRequires:  phpunit9
 #        "php": ">=7.4",
 #        "psr/log": "^1"
 #    },
+#    "suggest": {
+#        "ext-ldap": "Support LDAP user authentication",
+#        "ext-radius": "Support RADIUS user authentication"
+#    },
 BuildRequires:  php(language) >= 7.4
 BuildRequires:  php-curl
 BuildRequires:  php-date
@@ -56,6 +60,8 @@ BuildRequires:  php-pdo
 BuildRequires:  php-sodium
 BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
+BuildRequires:  php-ldap
+BuildRequires:  php-radius
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 BuildRequires:  php-composer(fkooman/secookie) >= 6
@@ -84,6 +90,10 @@ Requires:   crontabs
 #        "php": ">=7.4",
 #        "psr/log": "^1"
 #    },
+#    "suggest": {
+#        "ext-ldap": "Support LDAP user authentication",
+#        "ext-radius": "Support RADIUS user authentication"
+#    },
 Requires:   php(language) >= 7.4
 Requires:   php-cli
 Requires:   php-curl
@@ -94,6 +104,8 @@ Requires:   php-pdo
 Requires:   php-sodium
 Requires:   php-sqlite3
 Requires:   php-spl
+Requires:   php-ldap
+Requires:   php-radius
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 Requires:   php-composer(fkooman/secookie) >= 6
@@ -206,6 +218,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.26
+- rebuilt
+
 * Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.25
 - rebuilt
 
