@@ -1,8 +1,8 @@
-%global git e41c3f6e62c8bb508c6b6086633e176280b70d8d
+%global git 0d02a090db10b99dfa4b619e9ca757190f7abf0d
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.23%{?dist}
+Release:    0.24%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -26,9 +26,10 @@ BuildRequires:  %{_bindir}/phpab
 #    "require-dev": {
 #        "ext-json": "*",
 #        "phpunit/phpunit": "^9",
-#        "fkooman/saml-sp": "^0.5.2"
+#        "fkooman/saml-sp": "2.x-dev"
 #    },
 BuildRequires:  php-json
+BuildRequires:  php-composer(fkooman/saml-sp)
 BuildRequires:  phpunit9
 
 #    "require": {
@@ -40,9 +41,9 @@ BuildRequires:  phpunit9
 #        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
-#        "fkooman/jwt": "^1",
-#        "fkooman/oauth2-server": "^6",
-#        "fkooman/secookie": "^5",
+#        "fkooman/jwt": "2.x-dev",
+#        "fkooman/oauth2-server": "7.x-dev",
+#        "fkooman/secookie": "6.x-dev",
 #        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
@@ -58,10 +59,9 @@ BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
-BuildRequires:  php-composer(fkooman/secookie) >= 5
-BuildRequires:  php-composer(fkooman/secookie) < 6
+BuildRequires:  php-composer(fkooman/secookie) >= 6
+BuildRequires:  php-composer(fkooman/secookie) < 7
 BuildRequires:  php-composer(lc/common)
-BuildRequires:  php-composer(paragonie/constant_time_encoding)
 BuildRequires:  php-composer(psr/log)
 
 Requires:   httpd-filesystem
@@ -80,9 +80,9 @@ Requires:   crontabs
 #        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
-#        "fkooman/jwt": "^1",
-#        "fkooman/oauth2-server": "^6",
-#        "fkooman/secookie": "^5",
+#        "fkooman/jwt": "2.x-dev",
+#        "fkooman/oauth2-server": "7.x-dev",
+#        "fkooman/secookie": "6.x-dev",
 #        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
@@ -99,8 +99,8 @@ Requires:   php-sqlite3
 Requires:   php-spl
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
-Requires:   php-composer(fkooman/secookie) >= 5
-Requires:   php-composer(fkooman/secookie) < 6
+Requires:   php-composer(fkooman/secookie) >= 6
+Requires:   php-composer(fkooman/secookie) < 7
 Requires:   php-composer(lc/common)
 Requires:   php-composer(psr/log)
 
@@ -211,6 +211,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.24
+- rebuilt
+
 * Wed Mar 24 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.23
 - rebuilt
 
