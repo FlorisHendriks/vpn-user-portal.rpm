@@ -1,8 +1,8 @@
-%global git 0d02a090db10b99dfa4b619e9ca757190f7abf0d
+%global git aa0afe38d25ad958101fb65ef7da9c18a1dd947b
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.24%{?dist}
+Release:    0.25%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -44,7 +44,6 @@ BuildRequires:  phpunit9
 #        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "fkooman/secookie": "6.x-dev",
-#        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
 #    },
@@ -61,7 +60,6 @@ BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 BuildRequires:  php-composer(fkooman/secookie) >= 6
 BuildRequires:  php-composer(fkooman/secookie) < 7
-BuildRequires:  php-composer(lc/common)
 BuildRequires:  php-composer(psr/log)
 
 Requires:   httpd-filesystem
@@ -83,7 +81,6 @@ Requires:   crontabs
 #        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "fkooman/secookie": "6.x-dev",
-#        "lc/common": "3.x-dev",
 #        "php": ">=7.4",
 #        "psr/log": "^1"
 #    },
@@ -101,7 +98,6 @@ Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 Requires:   php-composer(fkooman/secookie) >= 6
 Requires:   php-composer(fkooman/secookie) < 7
-Requires:   php-composer(lc/common)
 Requires:   php-composer(psr/log)
 
 Requires(post): /usr/sbin/semanage
@@ -130,7 +126,6 @@ cat <<'AUTOLOAD' | tee -a src/autoload.php
 require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
-require_once '%{_datadir}/php/LC/Common/autoload.php';
 require_once '%{_datadir}/php/Psr/Log/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
@@ -211,6 +206,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.25
+- rebuilt
+
 * Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.24
 - rebuilt
 
