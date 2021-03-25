@@ -1,8 +1,8 @@
-%global git aa0afe38d25ad958101fb65ef7da9c18a1dd947b
+%global git 9366f745ed6cebbbc0ab402d7bef6577faaf5580
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.26%{?dist}
+Release:    0.27%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -218,6 +218,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.27
+- rebuilt
+
 * Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.26
 - rebuilt
 
