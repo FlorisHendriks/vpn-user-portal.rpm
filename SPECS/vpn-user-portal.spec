@@ -1,8 +1,8 @@
-%global git da4155ac19fe3f1b805717794a2339dac37816d9
+%global git ea95cad5e4ca684b1216c31f5238ff8e81dc2110
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.28%{?dist}
+Release:    0.29%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -152,14 +152,14 @@ mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
 cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
 
 # bin
-for i in add-user show-oauth-key suggest-ip
+for i in add-user show-oauth-key suggest-ip generate-dns-zones
 do
     install -m 0755 -D -p bin/${i}.php %{buildroot}%{_sbindir}/%{name}-${i}
     sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_sbindir}/%{name}-${i}
 done
 
 # libexec
-for i in foreign-key-list-fetcher generate-secrets housekeeping init stats
+for i in foreign-key-list-fetcher generate-secrets housekeeping init stats wg-sync-peers
 do
     install -m 0755 -D -p libexec/${i}.php %{buildroot}%{_libexecdir}/%{name}/${i}
     sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_libexecdir}/%{name}/${i}
@@ -218,6 +218,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Fri Mar 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.29
+- rebuilt
+
 * Thu Mar 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.28
 - rebuilt
 

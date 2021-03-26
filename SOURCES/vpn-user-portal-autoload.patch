@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index 81e9b82..9997842 100644
+index 3a1722f..499caa3 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -13,6 +13,21 @@ index 81e9b82..9997842 100644
  
  use LC\Portal\Config;
  use LC\Portal\Storage;
+diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
+index 0f6eb8a..b3fc534 100644
+--- a/bin/generate-dns-zones.php
++++ b/bin/generate-dns-zones.php
+@@ -9,8 +9,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Portal\Config;
+ use LC\Portal\IP;
 diff --git a/bin/show-oauth-key.php b/bin/show-oauth-key.php
 index 13b73c9..e69fcba 100644
 --- a/bin/show-oauth-key.php
@@ -59,7 +74,7 @@ index 2d6dae7..b6da4c4 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 637fb16..acf392e 100644
+index 9dfb8e7..c8516c7 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +89,7 @@ index 637fb16..acf392e 100644
  use LC\Portal\Storage;
  
 diff --git a/libexec/init.php b/libexec/init.php
-index 2707fc0..868b48f 100644
+index 12c0852..b8f7c5c 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -89,7 +104,7 @@ index 2707fc0..868b48f 100644
  use LC\Portal\FileIO;
  use LC\Portal\Storage;
 diff --git a/libexec/stats.php b/libexec/stats.php
-index 4201a6b..40bb48d 100644
+index de08284..45c6607 100644
 --- a/libexec/stats.php
 +++ b/libexec/stats.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -103,6 +118,21 @@ index 4201a6b..40bb48d 100644
  
  use LC\Portal\Config;
  use LC\Portal\FileIO;
+diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
+index c1ec7a6..be86d97 100644
+--- a/libexec/wg-sync-peers.php
++++ b/libexec/wg-sync-peers.php
+@@ -9,8 +9,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Portal\Config;
+ use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
 index 5ed5cc9..a4bbef1 100644
 --- a/web/api.php
@@ -119,7 +149,7 @@ index 5ed5cc9..a4bbef1 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\BearerAuthenticationHook;
 diff --git a/web/index.php b/web/index.php
-index 559426b..b29a709 100644
+index 3b96a78..a9767d8 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +164,7 @@ index 559426b..b29a709 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\SeCookie\Cookie;
 diff --git a/web/node-api.php b/web/node-api.php
-index c149caf..0332038 100644
+index c1d78b8..b60acf9 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
