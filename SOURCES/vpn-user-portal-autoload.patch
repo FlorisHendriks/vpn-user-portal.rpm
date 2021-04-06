@@ -134,7 +134,7 @@ index fd44a04..61b6cfa 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index c8c145c..e6f2952 100644
+index 95a10da..ef6c6a1 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -147,9 +147,9 @@ index c8c145c..e6f2952 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
- use LC\Portal\BearerAuthenticationHook;
+ use LC\Portal\CA\VpnCa;
 diff --git a/web/index.php b/web/index.php
-index a226768..3ddde66 100644
+index 2a55b19..048b3a0 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +164,7 @@ index a226768..3ddde66 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\SeCookie\Cookie;
 diff --git a/web/node-api.php b/web/node-api.php
-index cc75a5f..bbbb098 100644
+index 4ecdcc7..f3c7afe 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -179,7 +179,7 @@ index cc75a5f..bbbb098 100644
  use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
 diff --git a/web/oauth.php b/web/oauth.php
-index f24a140..59f9f13 100644
+index dba4251..91dcc6e 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);

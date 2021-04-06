@@ -1,8 +1,8 @@
-%global git 1e7cfb2cedd9a358455cfa7a2070ad60635e8ca9
+%global git ff0bde0c05591f246ae0e63637d0cff17feda9a8
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.36%{?dist}
+Release:    0.37%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -44,8 +44,7 @@ BuildRequires:  phpunit9
 #        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "fkooman/secookie": "6.x-dev",
-#        "php": ">=7.4",
-#        "psr/log": "^1"
+#        "php": ">=7.4"
 #    },
 #    "suggest": {
 #        "ext-ldap": "Support LDAP user authentication",
@@ -66,7 +65,6 @@ BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 BuildRequires:  php-composer(fkooman/secookie) >= 6
 BuildRequires:  php-composer(fkooman/secookie) < 7
-BuildRequires:  php-composer(psr/log)
 
 Requires:   httpd-filesystem
 Requires:   vpn-ca
@@ -87,8 +85,7 @@ Requires:   crontabs
 #        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "fkooman/secookie": "6.x-dev",
-#        "php": ">=7.4",
-#        "psr/log": "^1"
+#        "php": ">=7.4"
 #    },
 #    "suggest": {
 #        "ext-ldap": "Support LDAP user authentication",
@@ -110,7 +107,6 @@ Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 Requires:   php-composer(fkooman/secookie) >= 6
 Requires:   php-composer(fkooman/secookie) < 7
-Requires:   php-composer(psr/log)
 
 Requires(post): /usr/sbin/semanage
 Requires(post): /usr/bin/openssl
@@ -138,7 +134,6 @@ cat <<'AUTOLOAD' | tee -a src/autoload.php
 require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
-require_once '%{_datadir}/php/Psr/Log/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
     require_once '%{_datadir}/php/fkooman/SAML/SP/autoload.php';
@@ -218,6 +213,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Apr 06 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.37
+- rebuilt
+
 * Tue Apr 06 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.36
 - rebuilt
 
