@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index 3a1722f..499caa3 100644
+index 1b17bd6..83f0705 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +74,7 @@ index 2d6dae7..b6da4c4 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 9dfb8e7..c8516c7 100644
+index 11aab01..8df2b69 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -86,10 +86,10 @@ index 9dfb8e7..c8516c7 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
+ use LC\Portal\Config;
  use LC\Portal\Storage;
- 
 diff --git a/libexec/init.php b/libexec/init.php
-index 12c0852..b8f7c5c 100644
+index 91e2c72..dbe3e38 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -101,10 +101,10 @@ index 12c0852..b8f7c5c 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
+ use LC\Portal\Config;
  use LC\Portal\FileIO;
- use LC\Portal\Storage;
 diff --git a/libexec/stats.php b/libexec/stats.php
-index de08284..45c6607 100644
+index 7192d4d..9c74bca 100644
 --- a/libexec/stats.php
 +++ b/libexec/stats.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +119,7 @@ index de08284..45c6607 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
-index c1ec7a6..be86d97 100644
+index fd44a04..61b6cfa 100644
 --- a/libexec/wg-sync-peers.php
 +++ b/libexec/wg-sync-peers.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +134,7 @@ index c1ec7a6..be86d97 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index 5ed5cc9..a4bbef1 100644
+index c8c145c..e6f2952 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +149,7 @@ index 5ed5cc9..a4bbef1 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\BearerAuthenticationHook;
 diff --git a/web/index.php b/web/index.php
-index 3b96a78..a9767d8 100644
+index a226768..3ddde66 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +164,7 @@ index 3b96a78..a9767d8 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\SeCookie\Cookie;
 diff --git a/web/node-api.php b/web/node-api.php
-index c1d78b8..b60acf9 100644
+index cc75a5f..bbbb098 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -179,7 +179,7 @@ index c1d78b8..b60acf9 100644
  use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
 diff --git a/web/oauth.php b/web/oauth.php
-index 5fcfdb5..cb70edd 100644
+index f24a140..59f9f13 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
