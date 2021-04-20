@@ -134,7 +134,7 @@ index 7582d40..7ff695c 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index 8c1ee13..f9ff2ce 100644
+index ac044cd..66ecce3 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +149,7 @@ index 8c1ee13..f9ff2ce 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\CA\VpnCa;
 diff --git a/web/index.php b/web/index.php
-index 8bd16f9..30db5ee 100644
+index 503c236..6498868 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -179,7 +179,7 @@ index d525c6a..167e6b6 100644
  use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
 diff --git a/web/oauth.php b/web/oauth.php
-index 5fb35dc..db906f0 100644
+index 753f376..bfee6cd 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -192,7 +192,7 @@ index 5fb35dc..db906f0 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
- use LC\Portal\Config;
+ use LC\Portal\CA\VpnCa;
 diff --git a/web/well-known.php b/web/well-known.php
 index 7ee1059..88bc8c4 100644
 --- a/web/well-known.php
