@@ -1,8 +1,8 @@
-%global git 7ce0b6700eb64293f28269bdd9db05d30ded4900
+%global git a5c55f17a7d3a7ecdc07f2b5dd6d39c71eec97c9
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.68%{?dist}
+Release:    0.69%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -43,7 +43,6 @@ BuildRequires:  phpunit9
 #        "ext-spl": "*",
 #        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
-#        "fkooman/secookie": "6.x-dev",
 #        "php": ">=7.4"
 #    },
 #    "suggest": {
@@ -63,8 +62,6 @@ BuildRequires:  php-ldap
 BuildRequires:  php-radius
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
-BuildRequires:  php-composer(fkooman/secookie) >= 6
-BuildRequires:  php-composer(fkooman/secookie) < 7
 
 Requires:   httpd-filesystem
 Requires:   vpn-ca
@@ -84,7 +81,6 @@ Requires:   crontabs
 #        "ext-spl": "*",
 #        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
-#        "fkooman/secookie": "6.x-dev",
 #        "php": ">=7.4"
 #    },
 #    "suggest": {
@@ -105,8 +101,6 @@ Requires:   php-ldap
 Requires:   php-radius
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
-Requires:   php-composer(fkooman/secookie) >= 6
-Requires:   php-composer(fkooman/secookie) < 7
 
 Requires(post): /usr/sbin/semanage
 Requires(post): /usr/bin/openssl
@@ -133,7 +127,6 @@ echo "%{version}-%{release}" > VERSION
 cat <<'AUTOLOAD' | tee -a src/autoload.php
 require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
-require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
     require_once '%{_datadir}/php/fkooman/SAML/SP/autoload.php';
@@ -213,6 +206,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Apr 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.69
+- rebuilt
+
 * Fri Apr 23 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.68
 - rebuilt
 
