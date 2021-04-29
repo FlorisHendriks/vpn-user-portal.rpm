@@ -1,8 +1,8 @@
-%global git a5c55f17a7d3a7ecdc07f2b5dd6d39c71eec97c9
+%global git 8ce6a54352a4216943b8576bfbf7758534c4fc54
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.69%{?dist}
+Release:    0.70%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -29,7 +29,7 @@ BuildRequires:  %{_bindir}/phpab
 #        "fkooman/saml-sp": "2.x-dev"
 #    },
 BuildRequires:  php-json
-BuildRequires:  php-composer(fkooman/saml-sp)
+#BuildRequires:  php-composer(fkooman/saml-sp)
 BuildRequires:  phpunit9
 
 #    "require": {
@@ -206,6 +206,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Apr 29 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.70
+- rebuilt
+
 * Mon Apr 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.69
 - rebuilt
 
