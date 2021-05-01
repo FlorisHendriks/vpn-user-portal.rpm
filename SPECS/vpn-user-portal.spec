@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.74%{?dist}
+Release:    0.75%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -58,8 +58,6 @@ BuildRequires:  php-pdo
 BuildRequires:  php-sodium
 BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
-BuildRequires:  php-ldap
-BuildRequires:  php-radius
 BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 
@@ -97,14 +95,15 @@ Requires:   php-pdo
 Requires:   php-sodium
 Requires:   php-sqlite3
 Requires:   php-spl
-Requires:   php-ldap
-Requires:   php-radius
 Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 
 Requires(post): /usr/sbin/semanage
 Requires(post): /usr/bin/openssl
 Requires(postun): /usr/sbin/semanage
+
+Suggests:  php-ldap
+Suggests:  php-radius
 
 %description
 The user and admin portal and API for Let's Connect! and eduVPN allowing 
@@ -206,6 +205,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Sat May 01 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.75
+- rebuilt
+
 * Fri Apr 30 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.74
 - rebuilt
 
