@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.104%{?dist}
+Release:    0.105%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -36,6 +36,7 @@ BuildRequires:  phpunit9
 #        "ext-curl": "*",
 #        "ext-date": "*",
 #        "ext-hash": "*",
+#        "ext-mbstring": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
 #        "ext-sodium": "*",
@@ -53,6 +54,7 @@ BuildRequires:  php(language) >= 7.4
 BuildRequires:  php-curl
 BuildRequires:  php-date
 BuildRequires:  php-hash
+BuildRequires:  php-mbstring
 BuildRequires:  php-pcre
 BuildRequires:  php-pdo
 BuildRequires:  php-sodium
@@ -73,6 +75,7 @@ Requires:   crontabs
 #        "ext-curl": "*",
 #        "ext-date": "*",
 #        "ext-hash": "*",
+#        "ext-mbstring": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
 #        "ext-sodium": "*",
@@ -91,6 +94,7 @@ Requires:   php-cli
 Requires:   php-curl
 Requires:   php-date
 Requires:   php-hash
+Requires:   php-mbstring
 Requires:   php-pcre
 Requires:   php-pdo
 Requires:   php-sodium
@@ -206,6 +210,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Wed May 19 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.105
+- rebuilt
+
 * Wed May 19 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.104
 - rebuilt
 
