@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index 6b5dc84..94e69b1 100644
+index 0523fb0..4b583b7 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -14,7 +14,7 @@ index 6b5dc84..94e69b1 100644
  use LC\Portal\Config;
  use LC\Portal\Storage;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index aa848fd..74b44c1 100644
+index 0df1642..e26cbd4 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -43,8 +43,23 @@ index 4bdfcbc..dc22213 100644
  
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\FileIO;
+diff --git a/bin/status.php b/bin/status.php
+index a71b81d..afe467b 100644
+--- a/bin/status.php
++++ b/bin/status.php
+@@ -9,8 +9,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Portal\Config;
+ use LC\Portal\Json;
 diff --git a/libexec/foreign-key-list-fetcher.php b/libexec/foreign-key-list-fetcher.php
-index 19c4b6e..ceface8 100644
+index 6044d0a..841bbf2 100644
 --- a/libexec/foreign-key-list-fetcher.php
 +++ b/libexec/foreign-key-list-fetcher.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +89,7 @@ index 68a7bb4..3401e24 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 57512fe..15a93f2 100644
+index eb4b711..b3be540 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -104,7 +119,7 @@ index 9667645..b34dd2b 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/libexec/stats.php b/libexec/stats.php
-index 1a15d4a..ce890e3 100644
+index d91001f..ef1e82e 100644
 --- a/libexec/stats.php
 +++ b/libexec/stats.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +134,7 @@ index 1a15d4a..ce890e3 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
-index 7582d40..7ff695c 100644
+index a033b6c..ddb9bd5 100644
 --- a/libexec/wg-sync-peers.php
 +++ b/libexec/wg-sync-peers.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +149,7 @@ index 7582d40..7ff695c 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index a48af7d..a6cb6db 100644
+index 9dbd586..f67b003 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +164,7 @@ index a48af7d..a6cb6db 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index ae5df36..3b2b439 100644
+index c57c051..d08d5d0 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +179,7 @@ index ae5df36..3b2b439 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/node-api.php b/web/node-api.php
-index d525c6a..167e6b6 100644
+index 2d11a48..a4b3f74 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -179,7 +194,7 @@ index d525c6a..167e6b6 100644
  use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
 diff --git a/web/oauth.php b/web/oauth.php
-index 45e7007..c4739a3 100644
+index 78e60b7..d5d2bbf 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -194,7 +209,7 @@ index 45e7007..c4739a3 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/well-known.php b/web/well-known.php
-index 7ee1059..88bc8c4 100644
+index 00b0fae..351bbe5 100644
 --- a/web/well-known.php
 +++ b/web/well-known.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
