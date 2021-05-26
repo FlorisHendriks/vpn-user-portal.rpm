@@ -1,8 +1,8 @@
-%global git 554eb3213c068c833e75e7a845c7a9169ce73a98
+%global git 0b59fa36824055ec82b51135f3cd43b137480aba
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.111%{?dist}
+Release:    0.112%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -151,7 +151,7 @@ do
 done
 
 # libexec
-for i in foreign-key-list-fetcher generate-secrets housekeeping init stats wg-sync-peers
+for i in foreign-key-list-fetcher generate-secrets housekeeping init stats wg-sync-peers disconnect-expired-certificates
 do
     install -m 0755 -D -p libexec/${i}.php %{buildroot}%{_libexecdir}/%{name}/${i}
     sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_libexecdir}/%{name}/${i}
@@ -210,6 +210,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Wed May 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.112
+- rebuilt
+
 * Wed May 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.111
 - rebuilt
 
