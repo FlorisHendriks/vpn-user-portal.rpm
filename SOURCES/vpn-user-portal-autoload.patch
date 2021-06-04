@@ -28,21 +28,6 @@ index 0df1642..e26cbd4 100644
  
  use LC\Portal\Config;
  use LC\Portal\IP;
-diff --git a/bin/show-oauth-key.php b/bin/show-oauth-key.php
-index 4bdfcbc..dc22213 100644
---- a/bin/show-oauth-key.php
-+++ b/bin/show-oauth-key.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use fkooman\Jwt\Keys\EdDSA\SecretKey;
- use LC\Portal\FileIO;
 diff --git a/bin/status.php b/bin/status.php
 index fcc010b..7e29bc3 100644
 --- a/bin/status.php
