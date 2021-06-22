@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.126%{?dist}
+Release:    0.127%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -42,7 +42,6 @@ BuildRequires:  phpunit9
 #        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
-#        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "php": ">=7.4"
 #    },
@@ -60,7 +59,6 @@ BuildRequires:  php-pdo
 BuildRequires:  php-sodium
 BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
-BuildRequires:  php-composer(fkooman/jwt)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 
 Requires:   php-composer(fedora/autoloader)
@@ -81,7 +79,6 @@ Requires:   crontabs
 #        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
-#        "fkooman/jwt": "2.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "php": ">=7.4"
 #    },
@@ -100,7 +97,6 @@ Requires:   php-pdo
 Requires:   php-sodium
 Requires:   php-sqlite3
 Requires:   php-spl
-Requires:   php-composer(fkooman/jwt)
 Requires:   php-composer(fkooman/oauth2-server)
 
 Requires(post): /usr/sbin/semanage
@@ -129,7 +125,6 @@ echo "%{version}-%{release}" > VERSION
 
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
@@ -210,6 +205,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Tue Jun 22 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.127
+- rebuilt
+
 * Tue Jun 22 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.126
 - rebuilt
 
