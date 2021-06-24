@@ -74,7 +74,7 @@ index 6044d0a..841bbf2 100644
  use LC\Portal\Config;
  use LC\Portal\Federation\ForeignKeyListFetcher;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 12f9aa4..113c51f 100644
+index 9d41a67..f5429ff 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -86,7 +86,7 @@ index 12f9aa4..113c51f 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use fkooman\OAuth\Server\PublicSigner;
+ use fkooman\OAuth\Server\SimpleSigner;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
 index eb4b711..b3be540 100644
@@ -134,7 +134,7 @@ index d514e61..288cf1d 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
-index 13e55da..60cb1e8 100644
+index f8779d1..d209bb0 100644
 --- a/libexec/wg-sync-peers.php
 +++ b/libexec/wg-sync-peers.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +149,7 @@ index 13e55da..60cb1e8 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index 242583a..791f874 100644
+index 757548f..ec1d3f7 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +164,7 @@ index 242583a..791f874 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 0bedf56..1f54540 100644
+index e372896..8d9de69 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -177,7 +177,7 @@ index 0bedf56..1f54540 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\PublicSigner;
+ use fkooman\OAuth\Server\SimpleSigner;
 diff --git a/web/node-api.php b/web/node-api.php
 index 6904a69..b3fae26 100644
 --- a/web/node-api.php
@@ -194,7 +194,7 @@ index 6904a69..b3fae26 100644
  use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
 diff --git a/web/oauth.php b/web/oauth.php
-index 410fefc..618d306 100644
+index cf679d5..4c1e646 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -207,7 +207,7 @@ index 410fefc..618d306 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\PublicSigner;
+ use fkooman\OAuth\Server\SimpleSigner;
 diff --git a/web/well-known.php b/web/well-known.php
 index 00b0fae..351bbe5 100644
 --- a/web/well-known.php
