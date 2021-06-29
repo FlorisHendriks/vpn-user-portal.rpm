@@ -118,21 +118,6 @@ index 9667645..b34dd2b 100644
  
  use LC\Portal\Config;
  use LC\Portal\FileIO;
-diff --git a/libexec/stats.php b/libexec/stats.php
-index d514e61..288cf1d 100644
---- a/libexec/stats.php
-+++ b/libexec/stats.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use LC\Portal\Config;
- use LC\Portal\Dt;
 diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
 index f8779d1..d209bb0 100644
 --- a/libexec/wg-sync-peers.php
