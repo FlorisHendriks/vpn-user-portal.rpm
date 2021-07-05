@@ -1,8 +1,8 @@
-%global git f48c9a986575c6a0c9d3e3e16d25391b71d9c3ed
+%global git 84b287eb1cf269ab1b404a07a75df5f808953374
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.145%{?dist}
+Release:    0.146%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -36,6 +36,7 @@ BuildRequires:  phpunit9
 #        "ext-curl": "*",
 #        "ext-date": "*",
 #        "ext-hash": "*",
+#        "ext-gmp": "*",
 #        "ext-mbstring": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
@@ -53,6 +54,7 @@ BuildRequires:  php(language) >= 7.4
 BuildRequires:  php-curl
 BuildRequires:  php-date
 BuildRequires:  php-hash
+BuildRequires:  php-gmp
 BuildRequires:  php-mbstring
 BuildRequires:  php-pcre
 BuildRequires:  php-pdo
@@ -73,6 +75,7 @@ Requires:   crontabs
 #        "ext-curl": "*",
 #        "ext-date": "*",
 #        "ext-hash": "*",
+#        "ext-gmp": "*",
 #        "ext-mbstring": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
@@ -91,6 +94,7 @@ Requires:   php-cli
 Requires:   php-curl
 Requires:   php-date
 Requires:   php-hash
+Requires:   php-gmp
 Requires:   php-mbstring
 Requires:   php-pcre
 Requires:   php-pdo
@@ -205,6 +209,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Jul 05 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.146
+- rebuilt
+
 * Mon Jul 05 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.145
 - rebuilt
 
