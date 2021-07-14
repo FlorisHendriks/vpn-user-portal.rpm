@@ -14,7 +14,7 @@ index bb2dbd7..b39e537 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 0df1642..e26cbd4 100644
+index 9e37807..22b916c 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -44,7 +44,7 @@ index fcc010b..7e29bc3 100644
  use LC\Portal\Config;
  use LC\Portal\Json;
 diff --git a/libexec/disconnect-expired-certificates.php b/libexec/disconnect-expired-certificates.php
-index 498261b..681f5fa 100644
+index 8e2e2ae..acd717a 100644
 --- a/libexec/disconnect-expired-certificates.php
 +++ b/libexec/disconnect-expired-certificates.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -89,7 +89,7 @@ index 9d41a67..f5429ff 100644
  use fkooman\OAuth\Server\SimpleSigner;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index eb4b711..b3be540 100644
+index 5423c67..47f74ea 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -102,7 +102,7 @@ index eb4b711..b3be540 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use LC\Portal\Config;
- use LC\Portal\Storage;
+ use LC\Portal\Dt;
 diff --git a/libexec/init.php b/libexec/init.php
 index 9667645..b34dd2b 100644
 --- a/libexec/init.php
@@ -149,7 +149,7 @@ index 757548f..ec1d3f7 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index e372896..8d9de69 100644
+index 7a8ef34..b91e010 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +164,7 @@ index e372896..8d9de69 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\SimpleSigner;
 diff --git a/web/node-api.php b/web/node-api.php
-index 6904a69..b3fae26 100644
+index 6bf67cd..367e36d 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
