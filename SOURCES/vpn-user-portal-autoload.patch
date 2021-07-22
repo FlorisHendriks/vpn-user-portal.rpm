@@ -14,9 +14,24 @@ index bb2dbd7..b39e537 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 9e37807..22b916c 100644
+index 47ea5fb..94d59f8 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
+@@ -9,8 +9,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Portal\Config;
+ use LC\Portal\IP;
+diff --git a/bin/generate-nat-mapping.php b/bin/generate-nat-mapping.php
+index b9207ed..f330b57 100644
+--- a/bin/generate-nat-mapping.php
++++ b/bin/generate-nat-mapping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
@@ -149,7 +164,7 @@ index 757548f..ec1d3f7 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 7a8ef34..b91e010 100644
+index 10e6fc7..8c050fa 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
