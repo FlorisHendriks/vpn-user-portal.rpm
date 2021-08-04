@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index bb2dbd7..b39e537 100644
+index 294967d..51baea3 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -14,7 +14,7 @@ index bb2dbd7..b39e537 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 47ea5fb..94d59f8 100644
+index 84fd82e..566b552 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -29,7 +29,7 @@ index 47ea5fb..94d59f8 100644
  use LC\Portal\Config;
  use LC\Portal\IP;
 diff --git a/bin/generate-nat-mapping.php b/bin/generate-nat-mapping.php
-index b9207ed..f330b57 100644
+index 0605f22..4ea8f54 100644
 --- a/bin/generate-nat-mapping.php
 +++ b/bin/generate-nat-mapping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -44,7 +44,7 @@ index b9207ed..f330b57 100644
  use LC\Portal\Config;
  use LC\Portal\IP;
 diff --git a/bin/status.php b/bin/status.php
-index fcc010b..7e29bc3 100644
+index f7f0c22..4847e44 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +59,7 @@ index fcc010b..7e29bc3 100644
  use LC\Portal\Config;
  use LC\Portal\Json;
 diff --git a/libexec/disconnect-expired-certificates.php b/libexec/disconnect-expired-certificates.php
-index 8e2e2ae..acd717a 100644
+index 884fd95..4421aa0 100644
 --- a/libexec/disconnect-expired-certificates.php
 +++ b/libexec/disconnect-expired-certificates.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +74,7 @@ index 8e2e2ae..acd717a 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/libexec/foreign-key-list-fetcher.php b/libexec/foreign-key-list-fetcher.php
-index 6044d0a..841bbf2 100644
+index 023fcde..d9e3a59 100644
 --- a/libexec/foreign-key-list-fetcher.php
 +++ b/libexec/foreign-key-list-fetcher.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -89,7 +89,7 @@ index 6044d0a..841bbf2 100644
  use LC\Portal\Config;
  use LC\Portal\Federation\ForeignKeyListFetcher;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 9d41a67..f5429ff 100644
+index 857c045..a93ae30 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -101,10 +101,10 @@ index 9d41a67..f5429ff 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use fkooman\OAuth\Server\SimpleSigner;
+ use fkooman\OAuth\Server\PublicSigner;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 5423c67..47f74ea 100644
+index 69ec872..f738258 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +119,7 @@ index 5423c67..47f74ea 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/libexec/init.php b/libexec/init.php
-index 9667645..b34dd2b 100644
+index 015aba1..58f43ac 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +134,7 @@ index 9667645..b34dd2b 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
-index f8779d1..d209bb0 100644
+index e5456a9..73b9427 100644
 --- a/libexec/wg-sync-peers.php
 +++ b/libexec/wg-sync-peers.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +149,7 @@ index f8779d1..d209bb0 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index 757548f..ec1d3f7 100644
+index 07e3115..60dfe72 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +164,7 @@ index 757548f..ec1d3f7 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 10e6fc7..8c050fa 100644
+index 3a9bfdd..996d05f 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -177,7 +177,7 @@ index 10e6fc7..8c050fa 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\SimpleSigner;
+ use fkooman\OAuth\Server\PublicSigner;
 diff --git a/web/node-api.php b/web/node-api.php
 index 6bf67cd..367e36d 100644
 --- a/web/node-api.php
@@ -194,7 +194,7 @@ index 6bf67cd..367e36d 100644
  use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
 diff --git a/web/oauth.php b/web/oauth.php
-index cf679d5..4c1e646 100644
+index 410fefc..618d306 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -207,7 +207,7 @@ index cf679d5..4c1e646 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\SimpleSigner;
+ use fkooman\OAuth\Server\PublicSigner;
 diff --git a/web/well-known.php b/web/well-known.php
 index 00b0fae..351bbe5 100644
 --- a/web/well-known.php
