@@ -44,7 +44,7 @@ index 0605f22..4ea8f54 100644
  use LC\Portal\Config;
  use LC\Portal\IP;
 diff --git a/bin/status.php b/bin/status.php
-index f7f0c22..4847e44 100644
+index 68c09a9..0e094d9 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +134,7 @@ index 015aba1..58f43ac 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
-index e5456a9..73b9427 100644
+index e3c174d..f221768 100644
 --- a/libexec/wg-sync-peers.php
 +++ b/libexec/wg-sync-peers.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +149,7 @@ index e5456a9..73b9427 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index 2b99e31..ff39369 100644
+index 12a2227..6620899 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +164,7 @@ index 2b99e31..ff39369 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 396aa69..a20bca1 100644
+index 3f17e24..9dbb091 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -179,7 +179,7 @@ index 396aa69..a20bca1 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer\EdDSA;
 diff --git a/web/node-api.php b/web/node-api.php
-index 6bf67cd..367e36d 100644
+index 410f686..3b9a464 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -191,10 +191,10 @@ index 6bf67cd..367e36d 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\CA\VpnCa;
  use LC\Portal\Config;
+ use LC\Portal\FileIO;
 diff --git a/web/oauth.php b/web/oauth.php
-index 16d7833..6a1ff7c 100644
+index 2eb5c0c..c75e9a5 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
