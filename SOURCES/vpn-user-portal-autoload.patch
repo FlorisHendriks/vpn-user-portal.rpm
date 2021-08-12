@@ -14,7 +14,7 @@ index 294967d..51baea3 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 84fd82e..566b552 100644
+index 424a2f8..6153385 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -26,8 +26,8 @@ index 84fd82e..566b552 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
+ use LC\Portal\Binary;
  use LC\Portal\Config;
- use LC\Portal\IP;
 diff --git a/bin/generate-nat-mapping.php b/bin/generate-nat-mapping.php
 index 0605f22..4ea8f54 100644
 --- a/bin/generate-nat-mapping.php
