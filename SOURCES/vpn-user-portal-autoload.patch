@@ -14,7 +14,7 @@ index 63c5177..d7a5b72 100644
  use LC\Common\Config;
  use LC\Portal\Storage;
 diff --git a/bin/foreign-key-list-fetcher.php b/bin/foreign-key-list-fetcher.php
-index 9ee216e..89bf665 100644
+index 6fe4a83..079d1f5 100644
 --- a/bin/foreign-key-list-fetcher.php
 +++ b/bin/foreign-key-list-fetcher.php
 @@ -7,8 +7,8 @@
@@ -74,7 +74,7 @@ index 9e92551..0d7d8c3 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\FileIO;
 diff --git a/web/api.php b/web/api.php
-index 6dc4031..ecdb67c 100644
+index 2867a24..0526aa3 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -7,8 +7,8 @@
@@ -89,7 +89,7 @@ index 6dc4031..ecdb67c 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\Config;
 diff --git a/web/index.php b/web/index.php
-index a30eb32..97e156f 100644
+index cd0f92a..186be81 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -7,8 +7,8 @@
@@ -104,7 +104,7 @@ index a30eb32..97e156f 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\OAuth\Server\OAuthServer;
 diff --git a/web/oauth.php b/web/oauth.php
-index f6bd927..7f9c11b 100644
+index 83ba354..8b6aad0 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -7,8 +7,8 @@
