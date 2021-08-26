@@ -89,7 +89,7 @@ index 2867a24..0526aa3 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\Config;
 diff --git a/web/index.php b/web/index.php
-index 4e28686..d46a349 100644
+index cd0f92a..186be81 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -7,8 +7,8 @@
@@ -119,7 +119,7 @@ index 83ba354..8b6aad0 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use fkooman\OAuth\Server\OAuthServer;
 diff --git a/web/well-known.php b/web/well-known.php
-index 13a9dd0..3ebd0ae 100644
+index 411bc9f..05a0210 100644
 --- a/web/well-known.php
 +++ b/web/well-known.php
 @@ -7,8 +7,8 @@
@@ -131,5 +131,5 @@ index 13a9dd0..3ebd0ae 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Common\Config;
  use LC\Common\FileIO;
+ use LC\Common\Http\JsonResponse;
