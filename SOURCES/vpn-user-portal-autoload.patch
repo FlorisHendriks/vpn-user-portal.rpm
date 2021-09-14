@@ -73,21 +73,6 @@ index 9fe9d14..2bb2733 100644
  
  use LC\Portal\Config;
  use LC\Portal\Dt;
-diff --git a/libexec/foreign-key-list-fetcher.php b/libexec/foreign-key-list-fetcher.php
-index 023fcde..d9e3a59 100644
---- a/libexec/foreign-key-list-fetcher.php
-+++ b/libexec/foreign-key-list-fetcher.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use LC\Portal\Config;
- use LC\Portal\Federation\ForeignKeyListFetcher;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
 index bb65727..5c67fbe 100644
 --- a/libexec/generate-secrets.php
