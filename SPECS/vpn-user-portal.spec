@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.188%{?dist}
+Release:    0.189%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -68,7 +68,6 @@ Requires:   httpd-filesystem
 Requires:   vpn-ca
 Requires:   wireguard-tools
 Requires:   vpn-daemon
-Requires:   wg-daemon
 Requires:   /usr/bin/qrencode
 Requires:   crontabs
 #    "require": {
@@ -209,6 +208,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Fri Sep 17 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.189
+- rebuilt
+
 * Thu Sep 16 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.188
 - rebuilt
 
