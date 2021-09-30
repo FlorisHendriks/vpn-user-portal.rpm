@@ -1,5 +1,4 @@
 RANDOM_DELAY=10
 
-@hourly     apache /usr/libexec/vpn-user-portal/housekeeping
-*/2 * * * * apache /usr/libexec/vpn-user-portal/wg-sync-peers
-@hourly     apache /usr/libexec/vpn-user-portal/disconnect-expired-certificates
+@daily      apache /usr/libexec/vpn-user-portal/housekeeping
+*/5 * * * * apache /usr/libexec/vpn-user-portal/daemon-sync

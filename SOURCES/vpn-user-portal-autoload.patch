@@ -44,7 +44,7 @@ index 0605f22..4ea8f54 100644
  use LC\Portal\Config;
  use LC\Portal\IP;
 diff --git a/bin/status.php b/bin/status.php
-index 9d0ad0b..5fd7bb1 100644
+index ed05af4..1ee33d4 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -58,10 +58,10 @@ index 9d0ad0b..5fd7bb1 100644
  
  use LC\Portal\Config;
  use LC\Portal\ConnectionManager;
-diff --git a/libexec/disconnect-expired-certificates.php b/libexec/disconnect-expired-certificates.php
-index 9fe9d14..2bb2733 100644
---- a/libexec/disconnect-expired-certificates.php
-+++ b/libexec/disconnect-expired-certificates.php
+diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
+index 3329f79..05f4916 100644
+--- a/libexec/daemon-sync.php
++++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
@@ -72,7 +72,7 @@ index 9fe9d14..2bb2733 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use LC\Portal\Config;
- use LC\Portal\Dt;
+ use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
 index bb65727..5c67fbe 100644
 --- a/libexec/generate-secrets.php
@@ -118,23 +118,8 @@ index 172e97d..e66f40b 100644
  
  use LC\Portal\Config;
  use LC\Portal\FileIO;
-diff --git a/libexec/wg-sync-peers.php b/libexec/wg-sync-peers.php
-index 4909fee..46101c6 100644
---- a/libexec/wg-sync-peers.php
-+++ b/libexec/wg-sync-peers.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use LC\Portal\Config;
- use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/web/api.php b/web/api.php
-index b6ed3d4..319b7f8 100644
+index 2983732..350024c 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +134,7 @@ index b6ed3d4..319b7f8 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 48c22f0..ae69f61 100644
+index 6a6c5b4..ac711f4 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
