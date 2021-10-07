@@ -1,8 +1,8 @@
-%global git e4334b947bf6ff81b99ebe765e5dd45cd33c24a6
+%global git 5322bd0f35f6ed4d0397ab2f89cf519b6e4c5130
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.238%{?dist}
+Release:    0.240%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -43,6 +43,7 @@ BuildRequires:  phpunit9
 #        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
+#        "fkooman/secookie": "6.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "php": ">=7.4"
 #    },
@@ -61,6 +62,7 @@ BuildRequires:  php-pdo
 BuildRequires:  php-sodium
 BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
+BuildRequires:  php-composer(fkooman/secookie)
 BuildRequires:  php-composer(fkooman/oauth2-server)
 
 Requires:   php-composer(fedora/autoloader)
@@ -80,6 +82,7 @@ Requires:   crontabs
 #        "ext-sodium": "*",
 #        "ext-sqlite3": "*",
 #        "ext-spl": "*",
+#        "fkooman/secookie": "6.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
 #        "php": ">=7.4"
 #    },
@@ -99,6 +102,7 @@ Requires:   php-pdo
 Requires:   php-sodium
 Requires:   php-sqlite3
 Requires:   php-spl
+Requires:   php-composer(fkooman/secookie)
 Requires:   php-composer(fkooman/oauth2-server)
 
 Requires(post): /usr/sbin/semanage
@@ -127,6 +131,7 @@ echo "%{version}-%{release}" > VERSION
 
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
+require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
@@ -207,6 +212,12 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Oct 07 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.240
+- rebuilt
+
+* Thu Oct 07 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.239
+- rebuilt
+
 * Wed Oct 06 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.238
 - rebuilt
 
