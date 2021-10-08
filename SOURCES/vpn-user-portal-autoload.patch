@@ -14,7 +14,7 @@ index 902a66d..16673e4 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 2ce2b44..80c1996 100644
+index 5c706d9..b156c23 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -29,7 +29,7 @@ index 2ce2b44..80c1996 100644
  use LC\Portal\Binary;
  use LC\Portal\Config;
 diff --git a/bin/generate-nat-mapping.php b/bin/generate-nat-mapping.php
-index 0605f22..4ea8f54 100644
+index b3865be..96433e3 100644
 --- a/bin/generate-nat-mapping.php
 +++ b/bin/generate-nat-mapping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -42,9 +42,9 @@ index 0605f22..4ea8f54 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use LC\Portal\Config;
- use LC\Portal\IP;
+ 
 diff --git a/bin/status.php b/bin/status.php
-index ed05af4..1ee33d4 100644
+index 02ec326..75052c5 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +59,7 @@ index ed05af4..1ee33d4 100644
  use LC\Portal\Config;
  use LC\Portal\ConnectionManager;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index 3329f79..05f4916 100644
+index cc428a2..a277c8b 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +74,7 @@ index 3329f79..05f4916 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index bb65727..5c67fbe 100644
+index 966bbd8..1f47f62 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -104,7 +104,7 @@ index 4e97079..8183082 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/libexec/init.php b/libexec/init.php
-index 172e97d..e66f40b 100644
+index 45637f8..e131c68 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -118,8 +118,32 @@ index 172e97d..e66f40b 100644
  
  use LC\Portal\Config;
  use LC\Portal\FileIO;
+diff --git a/src/ConfigTrait.php b/src/ConfigTrait.php
+index b28c25d..1f26316 100644
+--- a/src/ConfigTrait.php
++++ b/src/ConfigTrait.php
+@@ -155,6 +155,19 @@ trait ConfigTrait
+         return $v;
+     }
+ 
++    /**
++     * We require either a string or an array of strings. Will always return
++     * array.
++     */
++    public function requireStringOrStringArray(string $k, ?array $d = null): array
++    {
++        if (\array_key_exists($k, $this->configData)) {
++            $this->configData[$k] = (array) $this->configData[$k];
++        }
++
++        return $this->requireStringArray($k, $d);
++    }
++
+     protected function toArray(): array
+     {
+         return $this->configData;
 diff --git a/web/api.php b/web/api.php
-index 2983732..350024c 100644
+index 08a34b2..fcece6d 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +158,7 @@ index 2983732..350024c 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 6a6c5b4..ac711f4 100644
+index cee3306..1d80c0d 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +173,7 @@ index 6a6c5b4..ac711f4 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer\EdDSA;
 diff --git a/web/node-api.php b/web/node-api.php
-index c00eaf6..9b4c820 100644
+index ee50acc..96a2f80 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +188,7 @@ index c00eaf6..9b4c820 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/web/oauth.php b/web/oauth.php
-index 9973280..39e7def 100644
+index 9f2d375..d01c989 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
