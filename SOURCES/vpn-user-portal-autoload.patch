@@ -14,7 +14,7 @@ index 902a66d..16673e4 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 5c706d9..b156c23 100644
+index a1b01a3..72128fe 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -44,7 +44,7 @@ index b3865be..96433e3 100644
  use LC\Portal\Config;
  
 diff --git a/bin/status.php b/bin/status.php
-index 02ec326..75052c5 100644
+index 64d5e7c..60c650f 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +59,7 @@ index 02ec326..75052c5 100644
  use LC\Portal\Config;
  use LC\Portal\ConnectionManager;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index cc428a2..a277c8b 100644
+index dd4679b..882dee9 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -118,30 +118,6 @@ index 45637f8..e131c68 100644
  
  use LC\Portal\Config;
  use LC\Portal\FileIO;
-diff --git a/src/ConfigTrait.php b/src/ConfigTrait.php
-index b28c25d..1f26316 100644
---- a/src/ConfigTrait.php
-+++ b/src/ConfigTrait.php
-@@ -155,6 +155,19 @@ trait ConfigTrait
-         return $v;
-     }
- 
-+    /**
-+     * We require either a string or an array of strings. Will always return
-+     * array.
-+     */
-+    public function requireStringOrStringArray(string $k, ?array $d = null): array
-+    {
-+        if (\array_key_exists($k, $this->configData)) {
-+            $this->configData[$k] = (array) $this->configData[$k];
-+        }
-+
-+        return $this->requireStringArray($k, $d);
-+    }
-+
-     protected function toArray(): array
-     {
-         return $this->configData;
 diff --git a/web/api.php b/web/api.php
 index 08a34b2..fcece6d 100644
 --- a/web/api.php
@@ -158,7 +134,7 @@ index 08a34b2..fcece6d 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index cee3306..1d80c0d 100644
+index 9e49734..cee9db0 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
