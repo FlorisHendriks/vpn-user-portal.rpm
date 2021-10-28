@@ -14,7 +14,7 @@ index 902a66d..16673e4 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index a1b01a3..72128fe 100644
+index d20eb60..4486825 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -28,23 +28,8 @@ index a1b01a3..72128fe 100644
  
  use LC\Portal\Binary;
  use LC\Portal\Config;
-diff --git a/bin/generate-nat-mapping.php b/bin/generate-nat-mapping.php
-index b3865be..96433e3 100644
---- a/bin/generate-nat-mapping.php
-+++ b/bin/generate-nat-mapping.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use LC\Portal\Config;
- 
 diff --git a/bin/status.php b/bin/status.php
-index 64d5e7c..60c650f 100644
+index b74e30d..52394c5 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +44,7 @@ index 64d5e7c..60c650f 100644
  use LC\Portal\Config;
  use LC\Portal\ConnectionManager;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index dd4679b..882dee9 100644
+index 3979cd6..0030c1f 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -89,7 +74,7 @@ index 966bbd8..1f47f62 100644
  use fkooman\OAuth\Server\Signer\EdDSA;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 4e97079..8183082 100644
+index 0760fa1..51201db 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +119,7 @@ index 08a34b2..fcece6d 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 9e49734..cee9db0 100644
+index 7e7db22..2dab18d 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
