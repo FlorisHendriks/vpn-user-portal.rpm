@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.295%{?dist}
+Release:    0.296%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -62,7 +62,8 @@ BuildRequires:  php-pdo
 BuildRequires:  php-sodium
 BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
-BuildRequires:  php-composer(fkooman/secookie)
+BuildRequires:  php-composer(fkooman/secookie) >= 6
+BuildRequires:  php-composer(fkooman/secookie) < 7
 BuildRequires:  php-composer(fkooman/oauth2-server)
 
 Requires:   php-composer(fedora/autoloader)
@@ -101,7 +102,8 @@ Requires:   php-pdo
 Requires:   php-sodium
 Requires:   php-sqlite3
 Requires:   php-spl
-Requires:   php-composer(fkooman/secookie)
+Requires:   php-composer(fkooman/secookie) >= 6
+Requires:   php-composer(fkooman/secookie) < 7
 Requires:   php-composer(fkooman/oauth2-server)
 
 Requires(post): /usr/sbin/semanage
@@ -130,7 +132,7 @@ echo "%{version}-%{release}" > VERSION
 
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
+require_once '%{_datadir}/php/fkooman/SeCookie6/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
@@ -211,6 +213,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Fri Nov 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.296
+- rebuilt
+
 * Thu Nov 25 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.295
 - rebuilt
 
