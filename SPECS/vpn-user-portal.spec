@@ -2,7 +2,7 @@
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.298%{?dist}
+Release:    0.299%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -132,7 +132,7 @@ echo "%{version}-%{release}" > VERSION
 
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/fkooman/SeCookie6/autoload.php';
+require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
 require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
@@ -213,6 +213,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Sat Nov 27 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.299
+- rebuilt
+
 * Fri Nov 26 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.298
 - rebuilt
 
