@@ -29,7 +29,7 @@ index d20eb60..4486825 100644
  use LC\Portal\Binary;
  use LC\Portal\Config;
 diff --git a/bin/status.php b/bin/status.php
-index b74e30d..52394c5 100644
+index 5d27c64..82da647 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -44,7 +44,7 @@ index b74e30d..52394c5 100644
  use LC\Portal\Config;
  use LC\Portal\ConnectionManager;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index 3979cd6..0030c1f 100644
+index 7f4b5b2..50fe11b 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +59,7 @@ index 3979cd6..0030c1f 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 966bbd8..1f47f62 100644
+index 3280fde..9ee4349 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -71,7 +71,7 @@ index 966bbd8..1f47f62 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use fkooman\OAuth\Server\Signer\EdDSA;
+ use fkooman\OAuth\Server\Signer;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
 index 0760fa1..51201db 100644
@@ -89,7 +89,7 @@ index 0760fa1..51201db 100644
  use LC\Portal\Config;
  use LC\Portal\Dt;
 diff --git a/libexec/init.php b/libexec/init.php
-index 45637f8..e131c68 100644
+index 927f921..d957720 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -104,7 +104,7 @@ index 45637f8..e131c68 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/web/api.php b/web/api.php
-index 08a34b2..fcece6d 100644
+index 03b40f3..80cafe8 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +119,7 @@ index 08a34b2..fcece6d 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 7e7db22..2dab18d 100644
+index c880853..934606b 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -132,9 +132,9 @@ index 7e7db22..2dab18d 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\Signer\EdDSA;
+ use fkooman\OAuth\Server\Signer;
 diff --git a/web/node-api.php b/web/node-api.php
-index ee50acc..96a2f80 100644
+index 15af5cd..70d935e 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +149,7 @@ index ee50acc..96a2f80 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/web/oauth.php b/web/oauth.php
-index 9f2d375..d01c989 100644
+index c9523bf..46ba73a 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -162,7 +162,7 @@ index 9f2d375..d01c989 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\Signer\EdDSA;
+ use fkooman\OAuth\Server\Signer;
 diff --git a/web/well-known.php b/web/well-known.php
 index 88e97a2..13238af 100644
 --- a/web/well-known.php
