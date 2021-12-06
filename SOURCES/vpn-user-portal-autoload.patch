@@ -59,7 +59,7 @@ index 7f4b5b2..50fe11b 100644
  use LC\Portal\Config;
  use LC\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 28404d5..808656a 100644
+index 0804dbf..13b91a7 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -71,7 +71,7 @@ index 28404d5..808656a 100644
 +require_once '/usr/share/php/LC/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use fkooman\OAuth\Server\SecretKey;
+ use fkooman\OAuth\Server\Signer;
  use LC\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
 index 0760fa1..51201db 100644
@@ -104,7 +104,7 @@ index 927f921..d957720 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/web/api.php b/web/api.php
-index d5faa9b..3759fa3 100644
+index 5a7acfc..0a49f29 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +119,7 @@ index d5faa9b..3759fa3 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index eb43b50..37417be 100644
+index b04bb36..2fb4c03 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -132,7 +132,7 @@ index eb43b50..37417be 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\SecretKey;
+ use fkooman\OAuth\Server\Signer;
 diff --git a/web/node-api.php b/web/node-api.php
 index 15af5cd..70d935e 100644
 --- a/web/node-api.php
@@ -149,7 +149,7 @@ index 15af5cd..70d935e 100644
  use LC\Portal\Config;
  use LC\Portal\FileIO;
 diff --git a/web/oauth.php b/web/oauth.php
-index 9c1765a..497abdc 100644
+index c9523bf..46ba73a 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -162,7 +162,7 @@ index 9c1765a..497abdc 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
- use fkooman\OAuth\Server\SecretKey;
+ use fkooman\OAuth\Server\Signer;
 diff --git a/web/well-known.php b/web/well-known.php
 index 88e97a2..13238af 100644
 --- a/web/well-known.php
