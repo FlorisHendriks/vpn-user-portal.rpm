@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index 902a66d..16673e4 100644
+index 47a77a2b..93d757c2 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -8,13 +8,13 @@ index 902a66d..16673e4 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Config;
- use LC\Portal\Dt;
+ use Vpn\Portal\Config;
+ use Vpn\Portal\Dt;
 diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index d20eb60..4486825 100644
+index 909bc328..803c70ab 100644
 --- a/bin/generate-dns-zones.php
 +++ b/bin/generate-dns-zones.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -23,13 +23,13 @@ index d20eb60..4486825 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Binary;
- use LC\Portal\Config;
+ use Vpn\Portal\Binary;
+ use Vpn\Portal\Config;
 diff --git a/bin/status.php b/bin/status.php
-index 5d27c64..82da647 100644
+index 067e94fa..a01dc93d 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -38,13 +38,13 @@ index 5d27c64..82da647 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Config;
- use LC\Portal\ConnectionManager;
+ use Vpn\Portal\Config;
+ use Vpn\Portal\ConnectionManager;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index 7f4b5b2..50fe11b 100644
+index d0467612..67041caa 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -53,13 +53,13 @@ index 7f4b5b2..50fe11b 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Config;
- use LC\Portal\HttpClient\CurlHttpClient;
+ use Vpn\Portal\Config;
+ use Vpn\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 0804dbf..13b91a7 100644
+index 3e1b1da4..0daa4325 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -68,13 +68,13 @@ index 0804dbf..13b91a7 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\Signer;
- use LC\Portal\FileIO;
+ use Vpn\Portal\FileIO;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index 0760fa1..51201db 100644
+index c9a0152e..3d2682fd 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -83,13 +83,13 @@ index 0760fa1..51201db 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Config;
- use LC\Portal\Dt;
+ use Vpn\Portal\Config;
+ use Vpn\Portal\Dt;
 diff --git a/libexec/init.php b/libexec/init.php
-index 927f921..d957720 100644
+index cac1d894..faa2e542 100644
 --- a/libexec/init.php
 +++ b/libexec/init.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -98,13 +98,13 @@ index 927f921..d957720 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Config;
- use LC\Portal\FileIO;
+ use Vpn\Portal\Config;
+ use Vpn\Portal\FileIO;
 diff --git a/web/api.php b/web/api.php
-index 5a7acfc..0a49f29 100644
+index 2145bb29..4d634423 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -113,13 +113,13 @@ index 5a7acfc..0a49f29 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index b04bb36..2fb4c03 100644
+index 1c5d2403..94e5bb85 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -128,13 +128,13 @@ index b04bb36..2fb4c03 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/node-api.php b/web/node-api.php
-index 15af5cd..70d935e 100644
+index 0a550670..75b04ad8 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -143,13 +143,13 @@ index 15af5cd..70d935e 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\Config;
- use LC\Portal\FileIO;
+ use Vpn\Portal\Config;
+ use Vpn\Portal\FileIO;
 diff --git a/web/oauth.php b/web/oauth.php
-index c9523bf..46ba73a 100644
+index 69ef5e5d..ace4a1ea 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -158,13 +158,13 @@ index c9523bf..46ba73a 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/well-known.php b/web/well-known.php
-index 88e97a2..13238af 100644
+index c326341b..c1eadd09 100644
 --- a/web/well-known.php
 +++ b/web/well-known.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -173,8 +173,8 @@ index 88e97a2..13238af 100644
  
 -require_once dirname(__DIR__).'/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/LC/Portal/autoload.php';
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use LC\Portal\FileIO;
- use LC\Portal\Http\JsonResponse;
+ use Vpn\Portal\FileIO;
+ use Vpn\Portal\Http\JsonResponse;

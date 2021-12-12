@@ -1,8 +1,8 @@
-%global git 3edce15f3e89176e3a5f900e10b2476ff5cec25e
+%global git c1dd92cdd2141b49fac079a7e97898d7707ab94b
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.320%{?dist}
+Release:    0.321%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -143,8 +143,8 @@ AUTOLOAD
 %install
 mkdir -p %{buildroot}%{_datadir}/vpn-user-portal
 cp VERSION %{buildroot}%{_datadir}/vpn-user-portal
-mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
-cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
+mkdir -p %{buildroot}%{_datadir}/php/Vpn/Portal
+cp -pr src/* %{buildroot}%{_datadir}/php/Vpn/Portal
 
 # bin
 for i in add-user status generate-dns-zones
@@ -205,14 +205,17 @@ fi
 %config(noreplace) %{_sysconfdir}/cron.d/vpn-user-portal
 %{_sbindir}/*
 %{_libexecdir}/*
-%dir %{_datadir}/php/LC
-%{_datadir}/php/LC/Portal
+%dir %{_datadir}/php/Vpn
+%{_datadir}/php/Vpn/Portal
 %{_datadir}/vpn-user-portal
 %dir %attr(0700,apache,apache) %{_localstatedir}/lib/vpn-user-portal
 %doc README.md CHANGES.md composer.json config/config.php.example CONFIG_CHANGES.md locale/CREDITS.md
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Sun Dec 12 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.321
+- rebuilt
+
 * Sun Dec 12 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.320
 - rebuilt
 
