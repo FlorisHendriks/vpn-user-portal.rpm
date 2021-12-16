@@ -1,8 +1,8 @@
-%global git 63da84b06b4e4167d49da8eb43a9c832799c10d2
+%global git 4e3bfa45731735a8601a183cb8b307c924cf1bd1
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.330%{?dist}
+Release:    0.331%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -24,92 +24,102 @@ BuildRequires:  minisign
 BuildRequires:  php-fedora-autoloader-devel
 BuildRequires:  %{_bindir}/phpab
 #    "require-dev": {
-#        "ext-json": "*",
-#        "phpunit/phpunit": "^9",
-#        "fkooman/saml-sp": "2.x-dev"
+#        "phpunit/phpunit": "^9"
 #    },
-BuildRequires:  php-json
-#BuildRequires:  php-composer(fkooman/saml-sp)
 BuildRequires:  phpunit9
 
 #    "require": {
 #        "ext-curl": "*",
 #        "ext-date": "*",
-#        "ext-hash": "*",
+#        "ext-filter": "*",
 #        "ext-gmp": "*",
+#        "ext-hash": "*",
+#        "ext-json": "*",
 #        "ext-mbstring": "*",
+#        "ext-openssl": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
+#        "ext-pdo_sqlite": "*",
 #        "ext-sodium": "*",
-#        "ext-sqlite3": "*",
 #        "ext-spl": "*",
-#        "fkooman/secookie": "6.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
+#        "fkooman/secookie": "6.x-dev",
 #        "php": ">=7.4"
-#    },
-#    "suggest": {
-#        "ext-ldap": "Support LDAP user authentication",
-#        "ext-radius": "Support RADIUS user authentication"
 #    },
 BuildRequires:  php(language) >= 7.4
 BuildRequires:  php-curl
 BuildRequires:  php-date
-BuildRequires:  php-hash
+BuildRequires:  php-filter
 BuildRequires:  php-gmp
+BuildRequires:  php-hash
+BuildRequires:  php-json
 BuildRequires:  php-mbstring
+BuildRequires:  php-openssl
 BuildRequires:  php-pcre
 BuildRequires:  php-pdo
+BuildRequires:  php-pdo_sqlite
 BuildRequires:  php-sodium
-BuildRequires:  php-sqlite3
 BuildRequires:  php-spl
 BuildRequires:  php-composer(fkooman/secookie) >= 6
 BuildRequires:  php-composer(fkooman/secookie) < 7
-BuildRequires:  php-composer(fkooman/oauth2-server)
+BuildRequires:  php-composer(fkooman/oauth2-server) >= 7
+BuildRequires:  php-composer(fkooman/oauth2-server) < 8
 
 Requires:   php-composer(fedora/autoloader)
 Requires:   httpd-filesystem
 Requires:   vpn-ca
 Requires:   crontabs
+Requires:   php-cli
 #    "require": {
 #        "ext-curl": "*",
 #        "ext-date": "*",
-#        "ext-hash": "*",
+#        "ext-filter": "*",
 #        "ext-gmp": "*",
+#        "ext-hash": "*",
+#        "ext-json": "*",
 #        "ext-mbstring": "*",
+#        "ext-openssl": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
+#        "ext-pdo_sqlite": "*",
 #        "ext-sodium": "*",
-#        "ext-sqlite3": "*",
 #        "ext-spl": "*",
-#        "fkooman/secookie": "6.x-dev",
 #        "fkooman/oauth2-server": "7.x-dev",
+#        "fkooman/secookie": "6.x-dev",
 #        "php": ">=7.4"
 #    },
-#    "suggest": {
-#        "ext-ldap": "Support LDAP user authentication",
-#        "ext-radius": "Support RADIUS user authentication"
-#    },
 Requires:   php(language) >= 7.4
-Requires:   php-cli
 Requires:   php-curl
 Requires:   php-date
-Requires:   php-hash
+Requires:   php-filter
 Requires:   php-gmp
+Requires:   php-hash
+Requires:   php-json
 Requires:   php-mbstring
+Requires:   php-openssl
 Requires:   php-pcre
 Requires:   php-pdo
+Requires:   php-pdo_sqlite
 Requires:   php-sodium
-Requires:   php-sqlite3
 Requires:   php-spl
 Requires:   php-composer(fkooman/secookie) >= 6
 Requires:   php-composer(fkooman/secookie) < 7
-Requires:   php-composer(fkooman/oauth2-server)
+Requires:   php-composer(fkooman/oauth2-server) >= 7
+Requires:   php-composer(fkooman/oauth2-server) < 8
 
 Requires(post): /usr/sbin/semanage
 Requires(post): /usr/bin/openssl
 Requires(postun): /usr/sbin/semanage
 
+#    "suggest": {
+#        "ext-ldap": "Support LDAP Authentication",
+#        "ext-pdo_mysql": "Support MySQL/MariaDB",
+#        "ext-pdo_pgsql": "Support PostgreSQL",
+#        "ext-radius": "Support RADIUS Authentication"
+#    },
 Suggests:  php-ldap
+Suggests:  php-pdo_mysql
+Suggests:  php-pdo_pgsql
 Suggests:  php-radius
 
 %description
@@ -212,6 +222,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Dec 16 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.331
+- rebuilt
+
 * Wed Dec 15 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.330
 - rebuilt
 
