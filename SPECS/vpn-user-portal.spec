@@ -1,8 +1,8 @@
-%global git 10e62a0ea466bbac3a2f734d36da39e7b335a901
+%global git aefdc90c664a2bc64ecc990dcf77a710066d86e0
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.334%{?dist}
+Release:    0.335%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -69,6 +69,7 @@ Requires:   php-composer(fedora/autoloader)
 Requires:   httpd-filesystem
 Requires:   vpn-ca
 Requires:   crontabs
+Requires:   qrencode
 Requires:   php-cli
 #    "require": {
 #        "ext-curl": "*",
@@ -222,6 +223,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Mon Dec 20 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.335
+- rebuilt
+
 * Mon Dec 20 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.334
 - rebuilt
 
