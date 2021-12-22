@@ -1,8 +1,8 @@
-%global git e739dca156a86d3325684e3eb4f88f67c686bb03
+%global git 06a9e39bf6a2fc34bac2e544a8fae21df7bf9153
 
 Name:       vpn-user-portal
 Version:    3.0.0
-Release:    0.345%{?dist}
+Release:    0.346%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
@@ -199,7 +199,7 @@ AUTOLOAD
 semanage fcontext -a -t httpd_sys_rw_content_t '%{_localstatedir}/lib/vpn-user-portal(/.*)?' 2>/dev/null || :
 restorecon -R %{_localstatedir}/lib/vpn-user-portal || :
 
-# Generate OAuth/Node API key iff they do not exist
+# Generate OAuth/WireGuard/Node API key iff they do not exist
 %{_libexecdir}/vpn-user-portal/generate-secrets
 
 %postun
@@ -210,7 +210,7 @@ fi
 %files
 %defattr(-,root,root,-)
 %config(noreplace) %{_sysconfdir}/httpd/conf.d/vpn-user-portal.conf
-%dir %attr(0750,root,apache) %{_sysconfdir}/vpn-user-portal
+%dir %attr(2750,root,apache) %{_sysconfdir}/vpn-user-portal
 %config(noreplace) %{_sysconfdir}/vpn-user-portal/config.php
 %config(noreplace) %{_sysconfdir}/cron.d/vpn-user-portal
 %{_sbindir}/*
@@ -223,6 +223,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Wed Dec 22 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.346
+- rebuilt
+
 * Wed Dec 22 2021 François Kooman <fkooman@tuxed.net> - 3.0.0-0.345
 - rebuilt
 
