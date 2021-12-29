@@ -29,7 +29,7 @@ index 909bc328..803c70ab 100644
  use Vpn\Portal\Binary;
  use Vpn\Portal\Config;
 diff --git a/bin/status.php b/bin/status.php
-index 044b3ae3..be7c9341 100644
+index 4ad8c92b..d3a806d7 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +59,7 @@ index 13c5ea3d..6047f820 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index 7b177359..9dbfe95f 100644
+index ab10d36f..d82ef8b1 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -104,7 +104,7 @@ index 7f95a2bf..918d75a1 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\Storage;
 diff --git a/web/api.php b/web/api.php
-index 8fd46e32..09735939 100644
+index e95fe616..f7d62857 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +119,7 @@ index 8fd46e32..09735939 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 7aa6cde6..4e4db803 100644
+index 818abad4..830f2e4b 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +134,7 @@ index 7aa6cde6..4e4db803 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/node-api.php b/web/node-api.php
-index f9d201f5..aba7fb64 100644
+index d9ea6245..9005961d 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -147,7 +147,7 @@ index f9d201f5..aba7fb64 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use Vpn\Portal\Config;
- use Vpn\Portal\FileIO;
+ use Vpn\Portal\Http\Auth\NodeAuthModule;
 diff --git a/web/oauth.php b/web/oauth.php
 index 6ffedbd3..6784daf6 100644
 --- a/web/oauth.php
