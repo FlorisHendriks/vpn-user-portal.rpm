@@ -104,7 +104,7 @@ index d535753c..4dc132d0 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\Dt;
 diff --git a/web/api.php b/web/api.php
-index 9028965c..4e81c3a4 100644
+index b78eb8bd..6e3673a2 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -116,8 +116,8 @@ index 9028965c..4e81c3a4 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use fkooman\OAuth\Server\BearerValidator;
- use fkooman\OAuth\Server\LocalAccessTokenVerifier;
+ use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
+ use fkooman\OAuth\Server\Signer;
 diff --git a/web/index.php b/web/index.php
 index ede1587e..b5dc09a0 100644
 --- a/web/index.php
