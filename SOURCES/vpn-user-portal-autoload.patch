@@ -29,7 +29,7 @@ index 909bc328..803c70ab 100644
  use Vpn\Portal\Binary;
  use Vpn\Portal\Config;
 diff --git a/bin/status.php b/bin/status.php
-index 4ad8c92b..d3a806d7 100644
+index e41e5bb4..2b4bb293 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -58,8 +58,23 @@ index 13c5ea3d..6047f820 100644
  
  use Vpn\Portal\Config;
  use Vpn\Portal\HttpClient\CurlHttpClient;
+diff --git a/libexec/db.php b/libexec/db.php
+index 3fbf64b5..812360ee 100644
+--- a/libexec/db.php
++++ b/libexec/db.php
+@@ -9,8 +9,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use Vpn\Portal\Config;
+ use Vpn\Portal\Migration;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index ab10d36f..d82ef8b1 100644
+index e1bc7ee6..41979994 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -88,21 +103,6 @@ index d535753c..4dc132d0 100644
  
  use Vpn\Portal\Config;
  use Vpn\Portal\Dt;
-diff --git a/libexec/init-db.php b/libexec/init-db.php
-index 7f95a2bf..918d75a1 100644
---- a/libexec/init-db.php
-+++ b/libexec/init-db.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/Vpn/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use Vpn\Portal\Config;
- use Vpn\Portal\Storage;
 diff --git a/web/api.php b/web/api.php
 index e95fe616..f7d62857 100644
 --- a/web/api.php
@@ -119,7 +119,7 @@ index e95fe616..f7d62857 100644
  use fkooman\OAuth\Server\BearerValidator;
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
 diff --git a/web/index.php b/web/index.php
-index 818abad4..830f2e4b 100644
+index ede1587e..b5dc09a0 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
