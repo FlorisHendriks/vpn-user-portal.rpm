@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index e879b6b9..15e2c30b 100644
+index 36da84f6..0f770f56 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -13,23 +13,8 @@ index e879b6b9..15e2c30b 100644
  
  use Vpn\Portal\Config;
  use Vpn\Portal\Dt;
-diff --git a/bin/generate-dns-zones.php b/bin/generate-dns-zones.php
-index 909bc328..803c70ab 100644
---- a/bin/generate-dns-zones.php
-+++ b/bin/generate-dns-zones.php
-@@ -9,8 +9,8 @@ declare(strict_types=1);
-  * SPDX-License-Identifier: AGPL-3.0+
-  */
- 
--require_once dirname(__DIR__).'/vendor/autoload.php';
--$baseDir = dirname(__DIR__);
-+require_once '/usr/share/php/Vpn/Portal/autoload.php';
-+$baseDir = '/usr/share/vpn-user-portal';
- 
- use Vpn\Portal\Binary;
- use Vpn\Portal\Config;
 diff --git a/bin/status.php b/bin/status.php
-index e41e5bb4..2b4bb293 100644
+index 227d6b5c..f70195cc 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -44,7 +29,7 @@ index e41e5bb4..2b4bb293 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\ConnectionManager;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index 13c5ea3d..6047f820 100644
+index e2fe9915..3eb820f2 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -59,7 +44,7 @@ index 13c5ea3d..6047f820 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/db.php b/libexec/db.php
-index 3fbf64b5..812360ee 100644
+index 835e972a..f1caf4cd 100644
 --- a/libexec/db.php
 +++ b/libexec/db.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +59,7 @@ index 3fbf64b5..812360ee 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\Migration;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index e1bc7ee6..41979994 100644
+index e9f69440..b2a4cee9 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -89,7 +74,7 @@ index e1bc7ee6..41979994 100644
  use fkooman\OAuth\Server\Signer;
  use Vpn\Portal\Config;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index d535753c..4dc132d0 100644
+index dbad550a..1e008b30 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -104,7 +89,7 @@ index d535753c..4dc132d0 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\Dt;
 diff --git a/web/api.php b/web/api.php
-index b78eb8bd..6e3673a2 100644
+index 77e45234..2746948f 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +104,7 @@ index b78eb8bd..6e3673a2 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/index.php b/web/index.php
-index ede1587e..b5dc09a0 100644
+index 1f348c91..dd42a96e 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +119,7 @@ index ede1587e..b5dc09a0 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/node-api.php b/web/node-api.php
-index d9ea6245..9005961d 100644
+index 674f68fb..848e5d0e 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -149,7 +134,7 @@ index d9ea6245..9005961d 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\Http\Auth\NodeAuthModule;
 diff --git a/web/oauth.php b/web/oauth.php
-index 6ffedbd3..6784daf6 100644
+index b8290182..3c006195 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -164,7 +149,7 @@ index 6ffedbd3..6784daf6 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/well-known.php b/web/well-known.php
-index c326341b..c1eadd09 100644
+index f2b9913f..ccd04872 100644
 --- a/web/well-known.php
 +++ b/web/well-known.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
