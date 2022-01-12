@@ -14,7 +14,7 @@ index 36da84f6..0f770f56 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\Dt;
 diff --git a/bin/status.php b/bin/status.php
-index 227d6b5c..f70195cc 100644
+index b0d92ffe..2ed76ae3 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -44,7 +44,7 @@ index e2fe9915..3eb820f2 100644
  use Vpn\Portal\Config;
  use Vpn\Portal\HttpClient\CurlHttpClient;
 diff --git a/libexec/db.php b/libexec/db.php
-index 835e972a..f1caf4cd 100644
+index a2d23691..b1fb8dbf 100644
 --- a/libexec/db.php
 +++ b/libexec/db.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -74,7 +74,7 @@ index e9f69440..b2a4cee9 100644
  use fkooman\OAuth\Server\Signer;
  use Vpn\Portal\Config;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index dbad550a..1e008b30 100644
+index b692a120..005394a3 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -88,8 +88,23 @@ index dbad550a..1e008b30 100644
  
  use Vpn\Portal\Config;
  use Vpn\Portal\Dt;
+diff --git a/libexec/stats.php b/libexec/stats.php
+index 06dd5f1f..ab35d28d 100644
+--- a/libexec/stats.php
++++ b/libexec/stats.php
+@@ -9,8 +9,8 @@ declare(strict_types=1);
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/Vpn/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use Vpn\Portal\Config;
+ use Vpn\Portal\ConnectionManager;
 diff --git a/web/api.php b/web/api.php
-index 77e45234..2746948f 100644
+index c4ea9fad..f3ec5a0f 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -104,7 +119,7 @@ index 77e45234..2746948f 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/index.php b/web/index.php
-index 1f348c91..dd42a96e 100644
+index 44e8d550..f48d05ec 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);

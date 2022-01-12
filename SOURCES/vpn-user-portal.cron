@@ -2,3 +2,4 @@ RANDOM_DELAY=10
 
 @daily      apache /usr/libexec/vpn-user-portal/housekeeping
 */5 * * * * apache /usr/libexec/vpn-user-portal/daemon-sync
+*/5 * * * * apache /usr/libexec/vpn-user-portal/stats
