@@ -1,5 +1,5 @@
 diff --git a/bin/add-user.php b/bin/add-user.php
-index 36da84f6..0f770f56 100644
+index c013f1b2..1deb1bc8 100644
 --- a/bin/add-user.php
 +++ b/bin/add-user.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -11,10 +11,10 @@ index 36da84f6..0f770f56 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
+ use Vpn\Portal\Cfg\Config;
  use Vpn\Portal\Dt;
 diff --git a/bin/status.php b/bin/status.php
-index b0d92ffe..2ed76ae3 100644
+index d13637ba..28538633 100644
 --- a/bin/status.php
 +++ b/bin/status.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -26,10 +26,10 @@ index b0d92ffe..2ed76ae3 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
- use Vpn\Portal\ConnectionManager;
+ use Vpn\Portal\Cfg\Config;
+ use Vpn\Portal\Cfg\ProfileConfig;
 diff --git a/libexec/daemon-sync.php b/libexec/daemon-sync.php
-index e2fe9915..3eb820f2 100644
+index 5237ba49..c499b4c1 100644
 --- a/libexec/daemon-sync.php
 +++ b/libexec/daemon-sync.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -41,10 +41,10 @@ index e2fe9915..3eb820f2 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
- use Vpn\Portal\HttpClient\CurlHttpClient;
+ use Vpn\Portal\Cfg\Config;
+ use Vpn\Portal\Cfg\ProfileConfig;
 diff --git a/libexec/db.php b/libexec/db.php
-index a2d23691..b1fb8dbf 100644
+index 92a60f4d..811512cd 100644
 --- a/libexec/db.php
 +++ b/libexec/db.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -56,10 +56,10 @@ index a2d23691..b1fb8dbf 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
+ use Vpn\Portal\Cfg\Config;
  use Vpn\Portal\Migration;
 diff --git a/libexec/generate-secrets.php b/libexec/generate-secrets.php
-index e9f69440..b2a4cee9 100644
+index d67a921d..5a3c4027 100644
 --- a/libexec/generate-secrets.php
 +++ b/libexec/generate-secrets.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -72,9 +72,9 @@ index e9f69440..b2a4cee9 100644
 +$baseDir = '/usr/share/vpn-user-portal';
  
  use fkooman\OAuth\Server\Signer;
- use Vpn\Portal\Config;
+ use Vpn\Portal\Cfg\Config;
 diff --git a/libexec/housekeeping.php b/libexec/housekeeping.php
-index b692a120..005394a3 100644
+index 6f6be26f..c5643df8 100644
 --- a/libexec/housekeeping.php
 +++ b/libexec/housekeeping.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -86,10 +86,10 @@ index b692a120..005394a3 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
+ use Vpn\Portal\Cfg\Config;
  use Vpn\Portal\Dt;
 diff --git a/libexec/stats.php b/libexec/stats.php
-index 06dd5f1f..ab35d28d 100644
+index d115580c..c47c3a63 100644
 --- a/libexec/stats.php
 +++ b/libexec/stats.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -101,10 +101,10 @@ index 06dd5f1f..ab35d28d 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
+ use Vpn\Portal\Cfg\Config;
  use Vpn\Portal\ConnectionManager;
 diff --git a/web/api.php b/web/api.php
-index c4ea9fad..f3ec5a0f 100644
+index 5fee3626..10df4652 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -119,7 +119,7 @@ index c4ea9fad..f3ec5a0f 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/index.php b/web/index.php
-index 44e8d550..f48d05ec 100644
+index d8e73923..e06222f0 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -134,7 +134,7 @@ index 44e8d550..f48d05ec 100644
  use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use fkooman\OAuth\Server\Signer;
 diff --git a/web/node-api.php b/web/node-api.php
-index 674f68fb..848e5d0e 100644
+index 7b650751..225453bd 100644
 --- a/web/node-api.php
 +++ b/web/node-api.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
@@ -146,10 +146,10 @@ index 674f68fb..848e5d0e 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
- use Vpn\Portal\Config;
+ use Vpn\Portal\Cfg\Config;
  use Vpn\Portal\Http\Auth\NodeAuthModule;
 diff --git a/web/oauth.php b/web/oauth.php
-index b8290182..3c006195 100644
+index 2a6d00ee..b0f1ebcc 100644
 --- a/web/oauth.php
 +++ b/web/oauth.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
