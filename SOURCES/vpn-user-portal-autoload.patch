@@ -1,7 +1,7 @@
-diff --git a/bin/add-user.php b/bin/add-user.php
-index c013f1b2..1deb1bc8 100644
---- a/bin/add-user.php
-+++ b/bin/add-user.php
+diff --git a/bin/account.php b/bin/account.php
+index 40e365b8..eebe8d63 100644
+--- a/bin/account.php
++++ b/bin/account.php
 @@ -9,8 +9,8 @@ declare(strict_types=1);
   * SPDX-License-Identifier: AGPL-3.0+
   */
@@ -11,8 +11,8 @@ index c013f1b2..1deb1bc8 100644
 +require_once '/usr/share/php/Vpn/Portal/autoload.php';
 +$baseDir = '/usr/share/vpn-user-portal';
  
+ use fkooman\OAuth\Server\PdoStorage as OAuthStorage;
  use Vpn\Portal\Cfg\Config;
- use Vpn\Portal\Dt;
 diff --git a/bin/status.php b/bin/status.php
 index d13637ba..28538633 100644
 --- a/bin/status.php
