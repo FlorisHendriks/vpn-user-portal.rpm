@@ -1,7 +1,7 @@
-#global git 8601eaa0f20ebc4e1fa6ac502a8fa4ecfb112bc4
+%global git 90d78eed5e61fab7291cf9eade0a6a39a9a5d9cf
 
 Name:       vpn-user-portal
-Version:    2.4.2
+Version:    2.4.3
 Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
@@ -186,7 +186,7 @@ cp VERSION %{buildroot}%{_datadir}/vpn-user-portal
 mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
 cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
 
-for i in add-user foreign-key-list-fetcher init generate-oauth-key show-oauth-key
+for i in add-user account foreign-key-list-fetcher init generate-oauth-key show-oauth-key
 do
     install -m 0755 -D -p bin/${i}.php %{buildroot}%{_bindir}/vpn-user-portal-${i}
     sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_bindir}/vpn-user-portal-${i}
@@ -264,6 +264,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Fri Mar 11 2022 François Kooman <fkooman@tuxed.net> - 2.4.3-1
+- update to 2.4.3
+
 * Tue Feb 08 2022 François Kooman <fkooman@tuxed.net> - 2.4.2-1
 - update to 2.4.2
 

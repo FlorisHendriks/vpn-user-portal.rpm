@@ -1,3 +1,18 @@
+diff --git a/bin/account.php b/bin/account.php
+index 663eb64c..dfea275a 100644
+--- a/bin/account.php
++++ b/bin/account.php
+@@ -7,8 +7,8 @@
+  * SPDX-License-Identifier: AGPL-3.0+
+  */
+ 
+-require_once dirname(__DIR__).'/vendor/autoload.php';
+-$baseDir = dirname(__DIR__);
++require_once '/usr/share/php/LC/Portal/autoload.php';
++$baseDir = '/usr/share/vpn-user-portal';
+ 
+ use LC\Common\Config;
+ use LC\Common\HttpClient\CurlHttpClient;
 diff --git a/bin/add-user.php b/bin/add-user.php
 index 63c51770..d7a5b72c 100644
 --- a/bin/add-user.php
@@ -74,7 +89,7 @@ index 9e925513..0d7d8c37 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\FileIO;
 diff --git a/web/api.php b/web/api.php
-index 2867a24c..0526aa3a 100644
+index 2c98f946..42c33cb0 100644
 --- a/web/api.php
 +++ b/web/api.php
 @@ -7,8 +7,8 @@
@@ -89,7 +104,7 @@ index 2867a24c..0526aa3a 100644
  use fkooman\Jwt\Keys\EdDSA\SecretKey;
  use LC\Common\Config;
 diff --git a/web/index.php b/web/index.php
-index cd0f92af..186be81c 100644
+index b9cfa554..0fcdcf97 100644
 --- a/web/index.php
 +++ b/web/index.php
 @@ -7,8 +7,8 @@
