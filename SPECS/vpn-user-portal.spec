@@ -1,7 +1,7 @@
-#global git fca77ab600be86e49f942382614677abb8dae895
+#global git 89398ce65923975875014433688a5f988ec5b371
 
 Name:       vpn-user-portal
-Version:    2.4.4
+Version:    2.4.5
 Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
@@ -55,8 +55,7 @@ BuildRequires:  phpunit
 #        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
 #        "paragonie/random_compat": "^1|^2",
 #        "paragonie/sodium_compat": "^1",
-#        "php": ">=5.4.0",
-#        "psr/log": "^1.1"
+#        "php": ">=5.4.0"
 #    },
 BuildRequires:  php(language) >= 5.4.0
 BuildRequires:  php-curl
@@ -72,7 +71,6 @@ BuildRequires:  php-composer(fkooman/secookie) < 6
 BuildRequires:  php-composer(fkooman/sqlite-migrate)
 BuildRequires:  php-composer(lc/common)
 BuildRequires:  php-composer(paragonie/constant_time_encoding)
-BuildRequires:  php-composer(psr/log)
 %if 0%{?fedora} < 28 && 0%{?rhel} < 8
 BuildRequires:  php-composer(paragonie/random_compat)
 %endif
@@ -107,8 +105,7 @@ Requires:   crontabs
 #        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
 #        "paragonie/random_compat": "^1|^2",
 #        "paragonie/sodium_compat": "^1",
-#        "php": ">=5.4.0",
-#        "psr/log": "^1.1"
+#        "php": ">=5.4.0"
 #    },
 Requires:   php(language) >= 5.4.0
 Requires:   php-cli
@@ -125,7 +122,6 @@ Requires:   php-composer(fkooman/secookie) < 6
 Requires:   php-composer(fkooman/sqlite-migrate)
 Requires:   php-composer(lc/common)
 Requires:   php-composer(paragonie/constant_time_encoding)
-Requires:   php-composer(psr/log)
 %if 0%{?fedora} < 28 && 0%{?rhel} < 8
 Requires:   php-composer(paragonie/random_compat)
 %endif
@@ -168,7 +164,6 @@ require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
 require_once '%{_datadir}/php/fkooman/SqliteMigrate/autoload.php';
 require_once '%{_datadir}/php/ParagonIE/ConstantTime/autoload.php';
-require_once '%{_datadir}/php/Psr/Log/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
     require_once '%{_datadir}/php/fkooman/SAML/SP/autoload.php';
@@ -264,6 +259,9 @@ fi
 %license LICENSE LICENSE.spdx
 
 %changelog
+* Thu Apr 07 2022 François Kooman <fkooman@tuxed.net> - 2.4.5-1
+- update to 2.4.5
+
 * Tue Apr 05 2022 François Kooman <fkooman@tuxed.net> - 2.4.4-1
 - update to 2.4.4
 
