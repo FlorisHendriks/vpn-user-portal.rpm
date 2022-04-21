@@ -1,14 +1,14 @@
-#global git 89398ce65923975875014433688a5f988ec5b371
+%global git 333d9d91e0c2051a75113c0c33a3f30fc36af331
 
 Name:       vpn-user-portal
-Version:    2.4.5
+Version:    2.99.1
 Release:    1%{?dist}
 Summary:    User and admin portal for Let's Connect! and eduVPN
 Group:      Applications/Internet
 License:    AGPLv3+
-URL:        https://git.sr.ht/~fkooman/vpn-user-portal
+URL:	https://git.sr.ht/~fkooman/vpn-user-portal
 %if %{defined git}
-Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/archive/%{git}.tar.gz
+Source0:    https://github.com/florishendriks98/vpn-user-portal/archive/%{git}.tar.gz
 %else
 Source0:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/%{version}/vpn-user-portal-%{version}.tar.xz
 Source1:    https://git.sr.ht/~fkooman/vpn-user-portal/refs/download/%{version}/vpn-user-portal-%{version}.tar.xz.minisig
@@ -18,123 +18,110 @@ Source3:    vpn-user-portal-httpd.conf
 Source4:    vpn-user-portal.cron
 Patch0:     vpn-user-portal-autoload.patch
 
-# patch to convert php-sodium to php-libsodium functions/constants on el7
-Patch1:     vpn-user-portal-sodium-compat.patch
-
 BuildArch:  noarch
 
 BuildRequires:  minisign
 BuildRequires:  php-fedora-autoloader-devel
 BuildRequires:  %{_bindir}/phpab
 #    "require-dev": {
-#        "ext-json": "*",
-#        "phpunit/phpunit": "^4.8.35|^5|^6|^7"
+#        "phpunit/phpunit": "^9"
 #    },
-BuildRequires:  php-json
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
-BuildRequires:  phpunit7
-%global phpunit %{_bindir}/phpunit7
-%else
-BuildRequires:  phpunit
-%global phpunit %{_bindir}/phpunit
-%endif
+BuildRequires:  phpunit9
 
 #    "require": {
 #        "ext-curl": "*",
 #        "ext-date": "*",
+#        "ext-filter": "*",
+#        "ext-gmp": "*",
 #        "ext-hash": "*",
+#        "ext-json": "*",
+#        "ext-mbstring": "*",
+#        "ext-openssl": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
-#        "ext-sqlite3": "*",
+#        "ext-pdo_sqlite": "*",
+#        "ext-sodium": "*",
 #        "ext-spl": "*",
-#        "fkooman/jwt": "^1",
-#        "fkooman/oauth2-server": "^6",
-#        "fkooman/secookie": "^5",
-#        "fkooman/sqlite-migrate": "^0",
-#        "lc/common": "v2.x-dev",
-#        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
-#        "paragonie/random_compat": "^1|^2",
-#        "paragonie/sodium_compat": "^1",
-#        "php": ">=5.4.0"
+#        "fkooman/oauth2-server": "7.x-dev",
+#        "fkooman/secookie": "^6",
+#        "php": ">=7.4"
 #    },
-BuildRequires:  php(language) >= 5.4.0
+BuildRequires:  php(language) >= 7.4
 BuildRequires:  php-curl
 BuildRequires:  php-date
+BuildRequires:  php-filter
+BuildRequires:  php-gmp
 BuildRequires:  php-hash
+BuildRequires:  php-json
+BuildRequires:  php-mbstring
+BuildRequires:  php-openssl
 BuildRequires:  php-pcre
 BuildRequires:  php-pdo
-BuildRequires:  php-spl
-BuildRequires:  php-composer(fkooman/jwt)
-BuildRequires:  php-composer(fkooman/oauth2-server)
-BuildRequires:  php-composer(fkooman/secookie) >= 5
-BuildRequires:  php-composer(fkooman/secookie) < 6
-BuildRequires:  php-composer(fkooman/sqlite-migrate)
-BuildRequires:  php-composer(lc/common)
-BuildRequires:  php-composer(paragonie/constant_time_encoding)
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-BuildRequires:  php-composer(paragonie/random_compat)
-%endif
-
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
+BuildRequires:  php-pdo_sqlite
 BuildRequires:  php-sodium
-%else
-BuildRequires:  php-pecl(libsodium)
-%endif
+BuildRequires:  php-spl
+BuildRequires:  php-composer(fkooman/secookie) >= 6
+BuildRequires:  php-composer(fkooman/secookie) < 7
+BuildRequires:  php-composer(fkooman/oauth2-server) >= 7
+BuildRequires:  php-composer(fkooman/oauth2-server) < 8
 
-%if 0%{?fedora} >= 24
+Requires:   php-composer(fedora/autoloader)
 Requires:   httpd-filesystem
-%else
-# EL7 does not have httpd-filesystem
-Requires:   httpd
-%endif
-Requires:   /usr/bin/qrencode
+Requires:   vpn-ca
 Requires:   crontabs
+Requires:   qrencode
+Requires:   php-cli
 #    "require": {
 #        "ext-curl": "*",
 #        "ext-date": "*",
+#        "ext-filter": "*",
+#        "ext-gmp": "*",
 #        "ext-hash": "*",
+#        "ext-json": "*",
+#        "ext-mbstring": "*",
+#        "ext-openssl": "*",
 #        "ext-pcre": "*",
 #        "ext-pdo": "*",
-#        "ext-sqlite3": "*",
+#        "ext-pdo_sqlite": "*",
+#        "ext-sodium": "*",
 #        "ext-spl": "*",
-#        "fkooman/jwt": "^1",
-#        "fkooman/oauth2-server": "^6",
-#        "fkooman/secookie": "^5",
-#        "fkooman/sqlite-migrate": "^0",
-#        "lc/common": "v2.x-dev",
-#        "paragonie/constant_time_encoding": "^1.0.3|^2.2.0",
-#        "paragonie/random_compat": "^1|^2",
-#        "paragonie/sodium_compat": "^1",
-#        "php": ">=5.4.0"
+#        "fkooman/oauth2-server": "7.x-dev",
+#        "fkooman/secookie": "^6",
+#        "php": ">=7.4"
 #    },
-Requires:   php(language) >= 5.4.0
-Requires:   php-cli
+Requires:   php(language) >= 7.4
 Requires:   php-curl
 Requires:   php-date
+Requires:   php-filter
+Requires:   php-gmp
 Requires:   php-hash
+Requires:   php-json
+Requires:   php-mbstring
+Requires:   php-openssl
 Requires:   php-pcre
 Requires:   php-pdo
-Requires:   php-spl
-Requires:   php-composer(fkooman/jwt)
-Requires:   php-composer(fkooman/oauth2-server)
-Requires:   php-composer(fkooman/secookie) >= 5
-Requires:   php-composer(fkooman/secookie) < 6
-Requires:   php-composer(fkooman/sqlite-migrate)
-Requires:   php-composer(lc/common)
-Requires:   php-composer(paragonie/constant_time_encoding)
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-Requires:   php-composer(paragonie/random_compat)
-%endif
-
-%if 0%{?fedora} >= 28 || 0%{?rhel} >= 8
+Requires:   php-pdo_sqlite
 Requires:   php-sodium
-%else
-Requires:   php-pecl(libsodium)
-%endif
+Requires:   php-spl
+Requires:   php-composer(fkooman/secookie) >= 6
+Requires:   php-composer(fkooman/secookie) < 7
+Requires:   php-composer(fkooman/oauth2-server) >= 7
+Requires:   php-composer(fkooman/oauth2-server) < 8
 
 Requires(post): /usr/sbin/semanage
 Requires(post): /usr/bin/openssl
 Requires(postun): /usr/sbin/semanage
+
+#    "suggest": {
+#        "ext-ldap": "Support LDAP Authentication",
+#        "ext-pdo_mysql": "Support MySQL/MariaDB",
+#        "ext-pdo_pgsql": "Support PostgreSQL",
+#        "ext-radius": "Support RADIUS Authentication"
+#    },
+Suggests:  php-ldap
+Suggests:  php-pdo_mysql
+Suggests:  php-pdo_pgsql
+Suggests:  php-radius
 
 %description
 The user and admin portal and API for Let's Connect! and eduVPN allowing 
@@ -149,42 +136,38 @@ administrators.
 %setup -qn vpn-user-portal-%{version}
 %endif
 %patch0 -p1
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-%patch1 -p1
-%endif
 
 %build
 echo "%{version}-%{release}" > VERSION
 
 %{_bindir}/phpab -t fedora -o src/autoload.php src
 cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/LC/Common/autoload.php';
-require_once '%{_datadir}/php/fkooman/Jwt/autoload.php';
-require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 require_once '%{_datadir}/php/fkooman/SeCookie/autoload.php';
-require_once '%{_datadir}/php/fkooman/SqliteMigrate/autoload.php';
-require_once '%{_datadir}/php/ParagonIE/ConstantTime/autoload.php';
+require_once '%{_datadir}/php/fkooman/OAuth/Server/autoload.php';
 # optional dependency
 if (is_file('%{_datadir}/php/fkooman/SAML/SP/autoload.php') && is_readable('%{_datadir}/php/fkooman/SAML/SP/autoload.php')) {
     require_once '%{_datadir}/php/fkooman/SAML/SP/autoload.php';
 }
 AUTOLOAD
-%if 0%{?fedora} < 28 && 0%{?rhel} < 8
-cat <<'AUTOLOAD' | tee -a src/autoload.php
-require_once '%{_datadir}/php/random_compat/autoload.php';
-AUTOLOAD
-%endif
 
 %install
 mkdir -p %{buildroot}%{_datadir}/vpn-user-portal
 cp VERSION %{buildroot}%{_datadir}/vpn-user-portal
-mkdir -p %{buildroot}%{_datadir}/php/LC/Portal
-cp -pr src/* %{buildroot}%{_datadir}/php/LC/Portal
+mkdir -p %{buildroot}%{_datadir}/php/Vpn/Portal
+cp -pr src/* %{buildroot}%{_datadir}/php/Vpn/Portal
 
-for i in add-user account foreign-key-list-fetcher init generate-oauth-key show-oauth-key
+# bin
+for i in account status
 do
-    install -m 0755 -D -p bin/${i}.php %{buildroot}%{_bindir}/vpn-user-portal-${i}
-    sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_bindir}/vpn-user-portal-${i}
+    install -m 0755 -D -p bin/${i}.php %{buildroot}%{_sbindir}/%{name}-${i}
+    sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_sbindir}/%{name}-${i}
+done
+
+# libexec
+for i in generate-secrets housekeeping db daemon-sync stats
+do
+    install -m 0755 -D -p libexec/${i}.php %{buildroot}%{_libexecdir}/%{name}/${i}
+    sed -i '1s/^/#!\/usr\/bin\/php\n/' %{buildroot}%{_libexecdir}/%{name}/${i}
 done
 
 cp -pr schema web views locale %{buildroot}%{_datadir}/vpn-user-portal
@@ -208,36 +191,14 @@ install -m 0644 -D -p %{SOURCE3} %{buildroot}%{_sysconfdir}/httpd/conf.d/vpn-use
 cat <<'AUTOLOAD' | tee -a tests/autoload.php
 require_once 'src/autoload.php';
 AUTOLOAD
-
-%{phpunit} tests --verbose --bootstrap=tests/autoload.php
+/usr/bin/phpunit9 tests --verbose --bootstrap=tests/autoload.php
 
 %post
 semanage fcontext -a -t httpd_sys_rw_content_t '%{_localstatedir}/lib/vpn-user-portal(/.*)?' 2>/dev/null || :
 restorecon -R %{_localstatedir}/lib/vpn-user-portal || :
 
-# generate SAML keys if they do not yet exist
-if [ ! -f "%{_sysconfdir}/%{name}/sp.key" ]
-then
-    /usr/bin/openssl \
-        req \
-        -nodes \
-        -subj "/CN=SAML SP" \
-        -x509 \
-        -sha256 \
-        -newkey rsa:3072 \
-        -keyout "%{_sysconfdir}/%{name}/sp.key" \
-        -out "%{_sysconfdir}/%{name}/sp.crt" \
-        -days 1825 \
-        2>/dev/null
-    # allow web server to read the private key
-    /usr/bin/chmod 0644 %{_sysconfdir}/%{name}/sp.key
-fi
-
-# Generate OAuth key if it not yet exists
-if [ ! -f "%{_sysconfdir}/%{name}/oauth.key" ]
-then
-    %{_bindir}/vpn-user-portal-generate-oauth-key
-fi
+# Generate CA, OAuth/Node API key iff they do not exist
+%{_libexecdir}/vpn-user-portal/generate-secrets
 
 %postun
 if [ $1 -eq 0 ] ; then  # final removal
@@ -247,56 +208,24 @@ fi
 %files
 %defattr(-,root,root,-)
 %config(noreplace) %{_sysconfdir}/httpd/conf.d/vpn-user-portal.conf
-%dir %attr(0750,root,apache) %{_sysconfdir}/vpn-user-portal
+%dir %attr(2750,root,apache) %{_sysconfdir}/vpn-user-portal
 %config(noreplace) %{_sysconfdir}/vpn-user-portal/config.php
 %config(noreplace) %{_sysconfdir}/cron.d/vpn-user-portal
-%{_bindir}/*
-%dir %{_datadir}/php/LC
-%{_datadir}/php/LC/Portal
+%{_sbindir}/*
+%{_libexecdir}/*
+%dir %{_datadir}/php/Vpn
+%{_datadir}/php/Vpn/Portal
 %{_datadir}/vpn-user-portal
 %dir %attr(0700,apache,apache) %{_localstatedir}/lib/vpn-user-portal
 %doc README.md CHANGES.md composer.json config/config.php.example CONFIG_CHANGES.md locale/CREDITS.md
 %license LICENSE LICENSE.spdx
 
 %changelog
-* Thu Apr 07 2022 François Kooman <fkooman@tuxed.net> - 2.4.5-1
-- update to 2.4.5
+* Thu Apr 21 2022 Floris Hendriks <floris.hendriks@ru.nl> - 2.99.1-1
+- update to 2.99.1
 
-* Tue Apr 05 2022 François Kooman <fkooman@tuxed.net> - 2.4.4-1
-- update to 2.4.4
-
-* Wed Mar 30 2022 François Kooman <fkooman@tuxed.net> - 2.4.3-2
-- used signed release tar
-
-* Fri Mar 11 2022 François Kooman <fkooman@tuxed.net> - 2.4.3-1
-- update to 2.4.3
-
-* Tue Feb 08 2022 François Kooman <fkooman@tuxed.net> - 2.4.2-1
-- update to 2.4.2
-
-* Thu Jan 20 2022 François Kooman <fkooman@tuxed.net> - 2.4.1-1
-- update to 2.4.1
-
-* Tue Nov 09 2021 François Kooman <fkooman@tuxed.net> - 2.4.0-1
-- update to 2.4.0
-
-* Thu Aug 26 2021 François Kooman <fkooman@tuxed.net> - 2.3.14-1
-- update to 2.3.14
-
-* Mon Aug 02 2021 François Kooman <fkooman@tuxed.net> - 2.3.13-1
-- update to 2.3.13
-
-* Tue Jul 13 2021 François Kooman <fkooman@tuxed.net> - 2.3.12-1
-- update to 2.3.12
-
-* Tue Jun 08 2021 François Kooman <fkooman@tuxed.net> - 2.3.11-1
-- update to 2.3.11
-
-* Mon May 03 2021 François Kooman <fkooman@tuxed.net> - 2.3.10-1
-- update to 2.3.10
-
-* Mon Apr 12 2021 François Kooman <fkooman@tuxed.net> - 2.3.9-1
-- update to 2.3.9
+* Mon Apr 11 2022 François Kooman <fkooman@tuxed.net> - 2.99.0-1
+- update to 2.99.0
 
 * Mon Mar 15 2021 François Kooman <fkooman@tuxed.net> - 2.3.8-1
 - update to 2.3.8

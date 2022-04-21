@@ -1,0 +1,59 @@
+{
+    "packages": [
+        {
+            "name": "phpab/phpab",
+            "version": "0.1.0",
+            "version_normalized": "0.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpab/phpab.git",
+                "reference": "54a1f2bfe660ed7a0fca17fa22944e1c3f42efa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpab/phpab/zipball/54a1f2bfe660ed7a0fca17fa22944e1c3f42efa3",
+                "reference": "54a1f2bfe660ed7a0fca17fa22944e1c3f42efa3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5"
+            },
+            "time": "2016-03-29T12:26:49+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PhpAb\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Walter Tamboer",
+                    "homepage": "http://www.waltertamboer.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP library to create A/B tests.",
+            "keywords": [
+                "AB",
+                "abtesting",
+                "test",
+                "testing"
+            ],
+            "support": {
+                "issues": "https://github.com/phpab/phpab/issues",
+                "source": "https://github.com/phpab/phpab/tree/master"
+            },
+            "install-path": "../phpab/phpab"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
